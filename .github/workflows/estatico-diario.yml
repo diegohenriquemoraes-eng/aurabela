@@ -35,8 +35,22 @@ jobs:
 
       - run: pip install --quiet pillow
 
+      # Enquanto o token nao existir, sair em SUCESSO com aviso — sem isso os
+      # jobs agendados falhariam todo dia e encheriam o repo de issue falsa.
+      - name: Conferir se o token ja foi configurado
+        id: tok
+        env:
+          IG_TOKEN_AURABELA: ${{ secrets.IG_TOKEN_AURABELA }}
+        run: |
+          if [ -z "$IG_TOKEN_AURABELA" ]; then
+            echo "::warning::Sem IG_TOKEN_AURABELA ainda — gerar o token e salvar no secret. Nada publicado."
+            echo "pronto=nao" >> "$GITHUB_OUTPUT"
+          else
+            echo "pronto=sim" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Esperar as 19h em ponto
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule' && steps.tok.outputs.pronto == 'sim'
         run: |
           alvo=$(date -u -d "$(date -u +%F) 22:00:00" +%s)
           agora=$(date -u +%s)
@@ -49,6 +63,7 @@ jobs:
           fi
 
       - name: Publicar post estatico
+        if: steps.tok.outputs.pronto == 'sim'
         env:
           IG_TOKEN_AURABELA: ${{ secrets.IG_TOKEN_AURABELA }}
         run: |
