@@ -42,6 +42,43 @@ jobs:
             gh secret set IG_TOKEN_AURABELA --repo "${{ github.repository }}"
           echo "secret atualizado; token vale por mais ${{ steps.renovar.outputs.dias }} dias"
 
+      # O GH_PAT tambem expira (fine-grained vale no maximo 1 ano). Se ele
+      # morrer, a renovacao do token do Instagram para de gravar o secret e o
+      # projeto morre 60 dias depois, em silencio — a mesma falha silenciosa que
+      # derrubou o blog do vendanaobra. O GitHub devolve a data de expiracao do
+      # PAT num header, entao avisamos com 45 dias de antecedencia.
+      - name: Avisar se o GH_PAT esta perto de expirar
+        if: steps.renovar.outputs.token != ''
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          venc=$(curl -sI -H "Authorization: Bearer $GH_PAT" https://api.github.com/user \
+                 | tr -d '\r' | awk -F': ' '/^github-authentication-token-expiration:/{print $2}')
+          if [ -z "$venc" ]; then
+            echo "PAT sem data de expiracao (token classico) — nada a vigiar."
+            exit 0
+          fi
+          faltam=$(( ( $(date -d "$venc" +%s) - $(date +%s) ) / 86400 ))
+          echo "GH_PAT expira em $venc (faltam $faltam dias)"
+          echo "PAT_DIAS=$faltam" >> "$GITHUB_ENV"
+
+      - name: Abrir issue se o GH_PAT vence em menos de 45 dias
+        if: env.PAT_DIAS != '' && env.PAT_DIAS < 45
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "GH_PAT expira em " + process.env.PAT_DIAS + " dias — renovar",
+              body: "O GH_PAT (que grava o token do Instagram no secret) esta perto de " +
+                    "expirar. Quando ele morrer, a renovacao mensal para de funcionar e o " +
+                    "projeto sai do ar cerca de 60 dias depois, sem aviso.\n\n" +
+                    "Gerar outro em github.com/settings/personal-access-tokens\n" +
+                    "(fine-grained, so o repo aurabela, permissao Secrets: Read and write)\n" +
+                    "e salvar no secret GH_PAT."
+            })
+
       - name: Abrir issue se a renovacao falhar
         if: failure()
         uses: actions/github-script@v7
