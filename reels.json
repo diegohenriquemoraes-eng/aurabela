@@ -1,0 +1,143 @@
+{
+  "_leia": "Roteiros de Reels. Cada cena vira um quadro com Ken Burns. REGRA: a cena 1 e o GANCHO e precisa prender em 3s — frase curta, promessa ou pergunta incomoda. Ultima cena e o CTA. dur em segundos (3.0 e o padrao). fotos referenciam fotos/. Legenda montada por legenda.montar.",
+  "reels": [
+    {
+      "id": 1,
+      "pilar": "educativo",
+      "corpo": "A ordem certa muda o resultado — e é de graça mudar.\n\nO sérum tem molécula menor e entra mais fundo. Se você passa o creme antes, ele vira uma barreira e o sérum não atravessa.\n\nDo mais líquido para o mais denso. Sempre.",
+      "cenas": [
+        {"texto": "Sua pele não precisa de 10 produtos.", "etiqueta": "rotina simples", "foto": "ref-01-closeup-frontal-sem-oculos.jpg", "foco_y": 0.3},
+        {"texto": "Precisa de 3 — na ordem certa.", "rodape": "1. limpar", "foto": "ref-03-closeup-oculos-boina.jpg"},
+        {"texto": "Hidratar sela a água na pele.", "rodape": "2. hidratar", "foto": "ref-04-sorrindo-oculos-restaurante.jpg"},
+        {"texto": "E o protetor é o que segura o tempo.", "rodape": "3. proteger", "foto": "ref-12-selfie-oculos-sol-sorrindo.jpg"},
+        {"texto": "Comenta PELE que eu monto a sua.", "etiqueta": "seu ritual", "foto": "ref-02-closeup-frontal-oculos-grau.webp", "foco_y": 0.28}
+      ]
+    },
+    {
+      "id": 2,
+      "pilar": "autocuidado",
+      "corpo": "A gente aprende a ser a última da fila.\n\nE aí chega a noite e você não gastou 5 minutos com a sua própria cara.\n\nSkincare não é vaidade. É o único momento do dia em que você encosta em você com carinho.",
+      "cenas": [
+        {"texto": "Você cuidou de todo mundo hoje.", "etiqueta": "autocuidado 30+", "foto": "ref-03-closeup-oculos-boina.jpg"},
+        {"texto": "E de você, cuidou?", "foto": "ref-01-closeup-frontal-sem-oculos.jpg", "foco_y": 0.3},
+        {"texto": "São 5 minutos. Você tem 5 minutos.", "foto": "ref-04-sorrindo-oculos-restaurante.jpg"},
+        {"texto": "Se você não se escolher, ninguém escolhe.", "rodape": "salva isso", "foto": "ref-12-selfie-oculos-sol-sorrindo.jpg"}
+      ]
+    },
+    {
+      "id": 3,
+      "pilar": "educativo",
+      "corpo": "O sabonete de corpo tem pH alto — feito para a pele grossa do corpo.\n\nNo rosto, ele arranca o manto ácido que te protege. Aquela pele repuxada depois do banho não é limpeza: é a sua barreira gritando.\n\nE tem efeito rebote: a pele produz mais óleo pra compensar.",
+      "cenas": [
+        {"texto": "Para de lavar o rosto com sabonete de corpo.", "etiqueta": "erro comum", "foto": "ref-01-closeup-frontal-sem-oculos.jpg", "foco_y": 0.3},
+        {"texto": "Aquela pele repuxada não é limpeza.", "foto": "ref-02-closeup-frontal-oculos-grau.webp", "foco_y": 0.28},
+        {"texto": "É a sua barreira de proteção gritando.", "foto": "ref-03-closeup-oculos-boina.jpg"},
+        {"texto": "E ela devolve em óleo o que você tirou.", "rodape": "efeito rebote", "foto": "ref-04-sorrindo-oculos-restaurante.jpg"},
+        {"texto": "Comenta PELE que eu te indico o certo.", "etiqueta": "seu ritual", "foto": "ref-12-selfie-oculos-sol-sorrindo.jpg"}
+      ]
+    },
+    {
+      "id": 4,
+      "pilar": "educativo",
+      "corpo": "Os raios UVA atravessam vidro. Eles não queimam — por isso você não sente nada. Mas são eles que causam mancha e flacidez.\n\nQuem trabalha perto da janela pega sol o dia inteiro sem perceber.\n\nRegra prática: acordou, passou protetor.",
+      "cenas": [
+        {"texto": "Você passa protetor solar dentro de casa?", "etiqueta": "protetor solar", "foto": "ref-02-closeup-frontal-oculos-grau.webp", "foco_y": 0.28},
+        {"texto": "A luz da janela atravessa o vidro.", "foto": "ref-01-closeup-frontal-sem-oculos.jpg", "foco_y": 0.3},
+        {"texto": "Ela não queima. Ela mancha.", "rodape": "raios UVA", "foto": "ref-03-closeup-oculos-boina.jpg"},
+        {"texto": "Acordou? Passou protetor.", "foto": "ref-05-sorrindo-oculos-sol.jpg", "foco_y": 0.3},
+        {"texto": "Comenta PELE que eu monto a sua rotina.", "etiqueta": "seu ritual", "foto": "ref-04-sorrindo-oculos-restaurante.jpg"}
+      ]
+    },
+    {
+      "id": 5,
+      "pilar": "prova",
+      "corpo": "Não existe creme que apaga o tempo. Existe constância.\n\nO ciclo de renovação da pele leva cerca de 28 dias — por isso ninguém vê resultado em 3 dias.\n\nO que mudou na minha pele não foi um produto. Foi eu ter parado de começar e desistir.",
+      "cenas": [
+        {"texto": "Ninguém vê resultado em 3 dias.", "etiqueta": "30 dias", "foto": "ref-01-closeup-frontal-sem-oculos.jpg", "foco_y": 0.3},
+        {"texto": "A pele leva 28 dias pra se renovar.", "foto": "ref-02-closeup-frontal-oculos-grau.webp", "foco_y": 0.28},
+        {"texto": "É por isso que você desiste na 1ª semana.", "foto": "ref-03-closeup-oculos-boina.jpg"},
+        {"texto": "Dá 30 dias pra você. Só isso.", "rodape": "constância", "foto": "ref-12-selfie-oculos-sol-sorrindo.jpg"}
+      ]
+    },
+    {
+      "id": 6,
+      "pilar": "educativo",
+      "corpo": "Oleosidade e hidratação são coisas diferentes. Óleo é gordura, hidratação é água.\n\nDá pra ter pele oleosa E desidratada — é super comum.\n\nQuando você resseca achando que controla o óleo, ela produz mais pra se proteger. Hidratar acalma a produção.",
+      "cenas": [
+        {"texto": "Pele oleosa também precisa de hidratante.", "etiqueta": "mito", "foto": "ref-01-closeup-frontal-sem-oculos.jpg", "foco_y": 0.3},
+        {"texto": "Óleo é gordura. Hidratação é água.", "foto": "ref-02-closeup-frontal-oculos-grau.webp", "foco_y": 0.28},
+        {"texto": "Você resseca, ela oleia mais.", "rodape": "o ciclo", "foto": "ref-03-closeup-oculos-boina.jpg"},
+        {"texto": "Hidratar acalma a produção de óleo.", "foto": "ref-04-sorrindo-oculos-restaurante.jpg"},
+        {"texto": "Comenta PELE que eu te ajudo a escolher.", "etiqueta": "seu ritual", "foto": "ref-12-selfie-oculos-sol-sorrindo.jpg"}
+      ]
+    },
+    {
+      "id": 7,
+      "pilar": "educativo",
+      "corpo": "A pele do pescoço é mais fina e tem menos glândulas de óleo. Resseca antes, marca antes, cede antes.\n\nE é onde ninguém passa nada.\n\nTudo que você passa no rosto, leve até o colo. Sempre de baixo pra cima.",
+      "cenas": [
+        {"texto": "O pescoço entrega a idade que o rosto esconde.", "etiqueta": "pescoço", "foto": "ref-07-perfil-oculos-sol.jpg", "foco_y": 0.3},
+        {"texto": "A pele ali é mais fina e marca antes.", "foto": "ref-01-closeup-frontal-sem-oculos.jpg", "foco_y": 0.32},
+        {"texto": "E é onde ninguém passa nada.", "foto": "ref-03-closeup-oculos-boina.jpg"},
+        {"texto": "Leve tudo até o colo. De baixo pra cima.", "rodape": "10 segundos a mais", "foto": "ref-12-selfie-oculos-sol-sorrindo.jpg"}
+      ]
+    },
+    {
+      "id": 8,
+      "pilar": "autocuidado",
+      "corpo": "Filtro, luz de anel, retoque e vinte fotos descartadas pra uma dar certo.\n\nVocê compara a sua manhã real com o melhor momento editado de outra pessoa.\n\nPoro existe. Textura existe. Linha de expressão conta que você riu bastante.",
+      "cenas": [
+        {"texto": "A pele do Instagram não existe.", "etiqueta": "verdade", "foto": "ref-01-closeup-frontal-sem-oculos.jpg", "foco_y": 0.3},
+        {"texto": "Filtro, luz de anel e 20 fotos descartadas.", "foto": "ref-02-closeup-frontal-oculos-grau.webp", "foco_y": 0.28},
+        {"texto": "Poro existe. Textura existe.", "foto": "ref-03-closeup-oculos-boina.jpg"},
+        {"texto": "Cuide da pele que você tem, não da que não existe.", "rodape": "salva isso", "foto": "ref-04-sorrindo-oculos-restaurante.jpg"}
+      ]
+    },
+    {
+      "id": 9,
+      "pilar": "produto",
+      "corpo": "Um creme de R$ 120 que dura 3 meses sai a R$ 1,30 por dia. Menos que um cafezinho.\n\nAgora um kit de R$ 300 que você usa duas semanas e abandona — esse foi caro.\n\nO cálculo certo não é o preço da etiqueta. É o preço por dia de uso.",
+      "cenas": [
+        {"texto": "Caro é o produto que você compra e não usa.", "etiqueta": "custo real", "foto": "ref-03-closeup-oculos-boina.jpg"},
+        {"texto": "R$ 120 que duram 3 meses = R$ 1,30 por dia.", "foto": "ref-01-closeup-frontal-sem-oculos.jpg", "foco_y": 0.3},
+        {"texto": "Menos que um cafezinho.", "foto": "ref-04-sorrindo-oculos-restaurante.jpg"},
+        {"texto": "Prefiro te indicar 3 que você usa.", "rodape": "sempre", "foto": "ref-12-selfie-oculos-sol-sorrindo.jpg"},
+        {"texto": "Comenta PELE que eu monto o seu.", "etiqueta": "seu ritual", "foto": "ref-02-closeup-frontal-oculos-grau.webp", "foco_y": 0.28}
+      ]
+    },
+    {
+      "id": 10,
+      "pilar": "autocuidado",
+      "corpo": "A gente tem essa mania de tudo ou nada: falhei, então perdi tudo, então começo segunda.\n\nE a segunda vira mês que vem.\n\nSua pele não anota as faltas. Ela responde ao que você faz a partir de agora.",
+      "cenas": [
+        {"texto": "Parou a rotina por 2 semanas?", "etiqueta": "recomeço", "foto": "ref-01-closeup-frontal-sem-oculos.jpg", "foco_y": 0.3},
+        {"texto": "Você não zerou nada.", "foto": "ref-03-closeup-oculos-boina.jpg"},
+        {"texto": "Sua pele não anota as faltas.", "foto": "ref-02-closeup-frontal-oculos-grau.webp", "foco_y": 0.28},
+        {"texto": "Começa hoje à noite. Só o básico.", "rodape": "isso já é continuar", "foto": "ref-12-selfie-oculos-sol-sorrindo.jpg"}
+      ]
+    },
+    {
+      "id": 11,
+      "pilar": "educativo",
+      "corpo": "Uma noite não mata ninguém. O hábito, sim.\n\nÀ noite a pele faz a renovação celular. Com maquiagem por cima, o poro fica selado com resíduo e poluição do dia inteiro.\n\nCansada demais? Deixa um lenço de limpeza na cabeceira. Meia limpeza é melhor que nenhuma.",
+      "cenas": [
+        {"texto": "Dormir de maquiagem custa mais caro do que parece.", "etiqueta": "à noite", "foto": "ref-02-closeup-frontal-oculos-grau.webp", "foco_y": 0.28},
+        {"texto": "É à noite que a pele se renova.", "foto": "ref-01-closeup-frontal-sem-oculos.jpg", "foco_y": 0.3},
+        {"texto": "Com make, o poro passa a noite selado.", "rodape": "cravo e opacidade", "foto": "ref-03-closeup-oculos-boina.jpg"},
+        {"texto": "Cansada? Lenço na cabeceira resolve.", "foto": "ref-04-sorrindo-oculos-restaurante.jpg"}
+      ]
+    },
+    {
+      "id": 12,
+      "pilar": "prova",
+      "corpo": "Já perdi venda por isso e faria de novo.\n\nUma cliente queria o kit completo. Olhei a pele dela e falei: você não precisa disso agora.\n\nEla comprou dois. E voltou. E indicou três amigas.\n\nVender o que a pessoa não precisa dá dinheiro uma vez.",
+      "cenas": [
+        {"texto": "Eu já perdi venda de propósito.", "etiqueta": "honestidade", "foto": "ref-03-closeup-oculos-boina.jpg"},
+        {"texto": "Ela queria o kit completo.", "foto": "ref-01-closeup-frontal-sem-oculos.jpg", "foco_y": 0.3},
+        {"texto": "Eu disse: você não precisa disso agora.", "foto": "ref-02-closeup-frontal-oculos-grau.webp", "foco_y": 0.28},
+        {"texto": "Ela voltou. E indicou três amigas.", "rodape": "confiança", "foto": "ref-04-sorrindo-oculos-restaurante.jpg"},
+        {"texto": "Prefiro te indicar o certo do que o caro.", "foto": "ref-12-selfie-oculos-sol-sorrindo.jpg"}
+      ]
+    }
+  ]
+}

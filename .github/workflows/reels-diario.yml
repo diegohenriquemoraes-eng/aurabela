@@ -1,0 +1,80 @@
+name: Reels diario @aurabelastore_on
+
+# 09h BRT todo dia. O cron do Actions costuma atrasar alguns minutos, entao
+# disparamos as 11:45 UTC e o job espera ate 12:00:00 UTC = 09:00 BRT.
+
+on:
+  schedule:
+    - cron: "45 11 * * *"
+  workflow_dispatch:
+    inputs:
+      id:
+        description: "Forcar um roteiro especifico (id do reels.json)"
+        required: false
+        type: string
+      ensaio:
+        description: "Ensaio: monta o video sem publicar"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install --quiet pillow
+
+      # ffmpeg monta o Reels (Ken Burns sobre as fotos reais dela). O runner do
+      # Ubuntu ja traz o ffmpeg, mas garantimos para nao depender da imagem.
+      - name: Garantir ffmpeg
+        run: ffmpeg -version >/dev/null 2>&1 || sudo apt-get install -y ffmpeg
+
+      - name: Esperar as 9h em ponto
+        if: github.event_name == 'schedule'
+        run: |
+          alvo=$(date -u -d "$(date -u +%F) 12:00:00" +%s)
+          agora=$(date -u +%s)
+          espera=$(( alvo - agora ))
+          if [ "$espera" -gt 0 ]; then
+            echo "esperando ${espera}s ate 12:00:00 UTC (09:00 BRT)"
+            sleep "$espera"
+          else
+            echo "runner comecou atrasado (${espera}s); publicando agora"
+          fi
+
+      - name: Publicar Reels
+        env:
+          IG_TOKEN_AURABELA: ${{ secrets.IG_TOKEN_AURABELA }}
+        run: |
+          args=""
+          [ -n "${{ inputs.id }}" ] && args="$args --id ${{ inputs.id }}"
+          [ "${{ inputs.ensaio }}" = "true" ] && args="$args --ensaio"
+          python publicar_reels.py $args
+
+      - name: Abrir issue se falhar
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "Reels falhou em " + new Date().toISOString().slice(0, 10),
+              body: "O Reels diario falhou. Run: " +
+                    context.serverUrl + "/" + context.repo.owner + "/" +
+                    context.repo.repo + "/actions/runs/" + context.runId +
+                    "\n\nCausas comuns, em ordem:\n" +
+                    "1. Token do Instagram vencido (rodar o workflow Renovar token)\n" +
+                    "2. Banco de roteiros esgotado (repor reels.json)\n" +
+                    "3. ffmpeg/Pillow quebrado no runner\n"
+            })

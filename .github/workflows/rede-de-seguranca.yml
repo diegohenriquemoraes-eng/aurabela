@@ -1,0 +1,68 @@
+name: Rede de seguranca
+
+# O cron do Actions pode atrasar ou ser descartado em horario de pico, e um dia
+# perdido passaria silencioso — foi assim que o blog do vendanaobra ficou 6 dias
+# fora sem ninguem notar. Estes jobs rodam DEPOIS de cada horario e publicam
+# so se a peca do dia nao saiu (--garantir). Se nem a repescagem conseguir,
+# abre issue.
+
+on:
+  schedule:
+    - cron: "0 14 * * *"   # 11h BRT — repescagem do Reels (era 09h)
+    - cron: "0 16 * * *"   # 13h BRT — 2a tentativa do Reels
+    - cron: "0 00 * * *"   # 21h BRT — repescagem do estatico (era 19h)
+    - cron: "0 02 * * *"   # 23h BRT — 2a tentativa do estatico
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  garantir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install --quiet pillow
+      - run: ffmpeg -version >/dev/null 2>&1 || sudo apt-get install -y ffmpeg
+
+      # Qual peca repescar depende da hora: de manha/tarde e o Reels, de noite
+      # e o estatico. Os dois publicadores sao idempotentes no dia (--garantir
+      # nao faz nada se a peca ja saiu), entao rodar os dois seria seguro —
+      # mas separar deixa o log legivel e evita montar video a toa.
+      - name: Repescar a peca do periodo
+        env:
+          IG_TOKEN_AURABELA: ${{ secrets.IG_TOKEN_AURABELA }}
+        run: |
+          hora=$(date -u +%H)
+          if [ "$hora" -ge 12 ] && [ "$hora" -lt 20 ]; then
+            echo "periodo da manha/tarde: repescando o Reels"
+            python publicar_reels.py --garantir
+          else
+            echo "periodo da noite: repescando o estatico"
+            python publicar_estatico.py --garantir
+          fi
+
+      - name: Avisar se nem a repescagem conseguiu
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const hoje = new Date().toISOString().slice(0, 10)
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "Sem post em " + hoje + " — a rede de seguranca tambem falhou",
+              body: "Nem o horario normal nem a repescagem publicaram.\n\n" +
+                    "Run: " + context.serverUrl + "/" + context.repo.owner + "/" +
+                    context.repo.repo + "/actions/runs/" + context.runId + "\n\n" +
+                    "Causas comuns, em ordem de probabilidade:\n" +
+                    "1. Token do Instagram vencido — rodar o workflow 'Renovar token'\n" +
+                    "2. Banco esgotado (conteudos.json / reels.json)\n" +
+                    "3. Conta do Instagram com restricao temporaria\n"
+            })

@@ -1,0 +1,63 @@
+name: Renovar token
+
+# O token da API do Instagram com Instagram Login dura 60 dias. Renovar todo mes
+# da 30 dias de folga: mesmo se uma renovacao falhar, a proxima ainda pega o
+# token vivo. E o que substitui o "nunca expira" do System User do vendanaobra.
+#
+# Roda dia 1 de cada mes, as 8h UTC (5h BRT — antes do post das 9h).
+
+on:
+  schedule:
+    - cron: "0 8 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  renovar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Renovar o token
+        id: renovar
+        env:
+          IG_TOKEN_AURABELA: ${{ secrets.IG_TOKEN_AURABELA }}
+        run: python renovar_token.py
+
+      # Grava o token novo de volta no secret. Precisa de um PAT com escopo
+      # de secrets (GH_PAT) — o GITHUB_TOKEN padrao nao pode escrever secrets.
+      - name: Gravar o token novo no secret
+        if: steps.renovar.outputs.token != ''
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          echo -n "${{ steps.renovar.outputs.token }}" | \
+            gh secret set IG_TOKEN_AURABELA --repo "${{ github.repository }}"
+          echo "secret atualizado; token vale por mais ${{ steps.renovar.outputs.dias }} dias"
+
+      - name: Abrir issue se a renovacao falhar
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "URGENTE: renovacao do token falhou",
+              body: "A renovacao automatica do token do Instagram falhou.\n\n" +
+                    "O token atual ainda vale por ate 60 dias a partir da ultima " +
+                    "renovacao bem-sucedida, mas se nada for feito o projeto PARA.\n\n" +
+                    "Run: " + context.serverUrl + "/" + context.repo.owner + "/" +
+                    context.repo.repo + "/actions/runs/" + context.runId + "\n\n" +
+                    "Como resolver a mao: gerar token novo em\n" +
+                    "developers.facebook.com/apps/4100345400259383 > Casos de uso >\n" +
+                    "API do Instagram > Configuracao da API com login do Instagram >\n" +
+                    "Gerar token, e salvar no secret IG_TOKEN_AURABELA.\n"
+            })
