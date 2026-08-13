@@ -15,7 +15,9 @@ LARG, ALT = 1080, 1920
 
 
 def gerar_story(arte: str, destino: str, chamada: str = "novo no feed",
-                rodape: str = "arrasta pra cima") -> str:
+                rodape: str = "toca pra ver") -> str:
+    # "arrasta pra cima" nao existe mais no Instagram (virou sticker de link em
+    # 2021) — pedir isso datava a peca e nao levava a lugar nenhum.
     fundo = Image.new("RGB", (LARG, ALT), Cor.OFFWHITE)
 
     # fundo: a propria arte borrada e escurecida, para dar profundidade
