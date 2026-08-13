@@ -81,6 +81,11 @@ def main() -> None:
     # arquivo para o proximo uso manual.
     saida = os.environ.get("GITHUB_OUTPUT")
     if saida:
+        # ::add-mask:: ANTES de qualquer coisa: outputs de step NAO sao mascarados
+        # sozinhos pelo Actions, e um `run` que interpole ${{ steps.x.outputs.token }}
+        # imprime o token inteiro no log — que num repositorio publico e vazamento.
+        # Com a mascara, qualquer ocorrencia vira *** no log.
+        print(f"::add-mask::{novo['access_token']}")
         with open(saida, "a", encoding="utf-8") as f:
             f.write(f"token={novo['access_token']}\n")
             f.write(f"dias={dias}\n")

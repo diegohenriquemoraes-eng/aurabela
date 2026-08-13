@@ -33,14 +33,19 @@ jobs:
 
       # Grava o token novo de volta no secret. Precisa de um PAT com escopo
       # de secrets (GH_PAT) — o GITHUB_TOKEN padrao nao pode escrever secrets.
+      # O token vai por VARIAVEL DE AMBIENTE, nunca interpolado no `run`.
+      # Interpolar (${{ ... }}) faz o Actions colar o valor no script antes de
+      # executar, e o proprio comando aparece no log — em repo publico, isso e
+      # vazamento. Via env, o valor nunca entra no texto do comando.
       - name: Gravar o token novo no secret
         if: steps.renovar.outputs.token != ''
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
+          TOKEN_NOVO: ${{ steps.renovar.outputs.token }}
+          DIAS: ${{ steps.renovar.outputs.dias }}
         run: |
-          echo -n "${{ steps.renovar.outputs.token }}" | \
-            gh secret set IG_TOKEN_AURABELA --repo "${{ github.repository }}"
-          echo "secret atualizado; token vale por mais ${{ steps.renovar.outputs.dias }} dias"
+          printf '%s' "$TOKEN_NOVO" | gh secret set IG_TOKEN_AURABELA --repo "$GITHUB_REPOSITORY"
+          echo "secret atualizado; token vale por mais $DIAS dias"
 
       # O GH_PAT tambem expira (fine-grained vale no maximo 1 ano). Se ele
       # morrer, a renovacao do token do Instagram para de gravar o secret e o
