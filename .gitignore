@@ -1,0 +1,4 @@
+imagens/
+audio/*.mp3
+__pycache__/
+*.pyc
