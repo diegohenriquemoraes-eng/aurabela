@@ -67,7 +67,7 @@ jobs:
           fi
 
       - name: Publicar Reels
-        if: steps.tok.outputs.pronto == 'sim'
+        if: steps.tok.outputs.pronto == 'sim' || inputs.ensaio
         env:
           IG_TOKEN_AURABELA: ${{ secrets.IG_TOKEN_AURABELA }}
         run: |
