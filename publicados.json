@@ -23,6 +23,14 @@
       "media_id": "17878692450686570",
       "cta": "vitrine",
       "pilar": "produto"
+    },
+    {
+      "tipo": "estatico",
+      "id": 2,
+      "data": "2026-08-13",
+      "media_id": "18097355465245529",
+      "cta": "pele",
+      "pilar": "autocuidado"
     }
   ]
 }
