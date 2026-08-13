@@ -163,6 +163,16 @@ não entra** (divide a mensagem de um perfil de venda).
   tentativas (~4 min).
 - **Reels sem faixa de áudio** pode ser recusado: `gerar_reels` embute silêncio
   quando não há trilha em `audio/`.
+- **Segredo nunca interpolado no `run` de um workflow.** `${{ steps.x.outputs.token }}`
+  dentro de `run:` faz o Actions montar o comando e **imprimir no log** — e o
+  repositório é público. Outputs de step não são mascarados automaticamente (só
+  secrets são). Passe por `env:` e mascare na origem com `::add-mask::`.
+  Aconteceu em 13/08: o token do Instagram vazou no log. O que resolveu não foi
+  apagar o log — foi **revogar o app no Instagram e reautorizar**, porque renovar
+  não invalida o token anterior.
+- **O pipe do PowerShell (`|`) acrescenta CRLF** ao gravar um secret, e o runner
+  responde `Bad credentials`. Grave em arquivo sem BOM e use
+  `cmd /c "gh secret set X --repo Y < arquivo"`.
 - **`raw.githubusercontent.com` serve `.mp4` como `application/octet-stream`**
   (a imagem sai como `image/jpeg`, correta). A API costuma aceitar assim, mas
   **isso ainda não foi validado com um post real** — é o único ponto do fluxo
