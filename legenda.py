@@ -31,24 +31,30 @@ VITRINE = "loja.marykay.com.br/minha-vitrine?slug=aurabela"
 # uma vitrine ou uma oportunidade de negocio. Por isso o CTA "consultora" e o
 # pilar "renda-extra" saem do ciclo. Se um dia ela quiser reativar o
 # recrutamento, basta recolocar as duas entradas — o resto do codigo aguenta.
+# Os dois ciclos tem tamanhos COPRIMOS (7 e 5) de proposito: se tivessem o mesmo
+# tamanho, girariam juntos e a combinacao CTA+pilar se repetiria identica a cada
+# 7 posts — o feed ficaria previsivel. Com 7 e 5, a combinacao so volta a se
+# repetir depois de 35 posts.
 CICLO_CTA = [
     "seguir",      # 0 · valor puro, constroi audiencia
     "pele",        # 1 · comment-to-DM: monta o ritual (captura + segmenta)
     "vitrine",     # 2 · link da bio
     "pele",        # 3
     "oferta",      # 4 · combo/promocao do mes
-    "vitrine",     # 5
-    "seguir",      # 6
+    "pele",        # 5 · PELE tem 3 posicoes: e o CTA que captura e segmenta
+    "vitrine",     # 6
 ]
+# Regra embutida na ordem acima: os CTAs de venda (vitrine/oferta) NUNCA caem em
+# posicoes seguidas — sempre ha um "pele" ou "seguir" entre eles, inclusive na
+# volta do ciclo (posicao 6 -> 0). Educacao e captura abrem espaco; a oferta
+# fecha. Reordenar sem checar isso transforma o perfil em vitrine.
 
 CICLO_PILAR = [
     "educativo",    # 0
     "prova",        # 1
     "produto",      # 2
     "autocuidado",  # 3
-    "educativo",    # 4
-    "produto",      # 5
-    "prova",        # 6
+    "educativo",    # 4 · educativo com peso 2: e o que mais salva e da autoridade
 ]
 
 # --------------------------------------------------------------------- pecas

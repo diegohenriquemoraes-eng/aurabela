@@ -79,11 +79,20 @@ avançando pela **posição** (nunca pelo nome — nomes repetem no ciclo e
 sub-loop; é a armadilha que o vendanaobra já pagou).
 
 ```
-CICLO_CTA    seguir → PELE → vitrine → PELE → oferta → vitrine → seguir
-CICLO_PILAR  educativo → prova → produto → autocuidado → educativo → produto → prova
+CICLO_CTA    (7)  seguir → PELE → vitrine → PELE → oferta → PELE → vitrine
+CICLO_PILAR  (5)  educativo → prova → produto → autocuidado → educativo
 ```
 
-Girando separados, a combinação varia sozinha e o feed nunca fica repetitivo.
+**Os tamanhos são coprimos (7 e 5) de propósito.** Com o mesmo tamanho os dois
+girariam juntos e a combinação CTA+pilar se repetiria idêntica a cada 7 posts —
+feed previsível. Assim ela só volta a se repetir depois de 14.
+
+**Os CTAs de venda nunca caem em posições seguidas** — sempre há um `PELE` ou
+`seguir` entre `vitrine` e `oferta`, inclusive na volta do ciclo (posição 6 → 0).
+Educação e captura abrem espaço; a oferta fecha. Reordenar sem checar isso
+transforma o perfil em vitrine. Peso resultante em 35 posts: PELE 15, vitrine 10,
+seguir 5, oferta 5.
+
 O estado só é gravado **quando o post publica de fato** — um dia que falhe não
 adianta o ciclo nem repete.
 
@@ -154,6 +163,13 @@ não entra** (divide a mensagem de um perfil de venda).
   tentativas (~4 min).
 - **Reels sem faixa de áudio** pode ser recusado: `gerar_reels` embute silêncio
   quando não há trilha em `audio/`.
+- **`raw.githubusercontent.com` serve `.mp4` como `application/octet-stream`**
+  (a imagem sai como `image/jpeg`, correta). A API costuma aceitar assim, mas
+  **isso ainda não foi validado com um post real** — é o único ponto do fluxo
+  que não deu para testar sem token. Se o container do Reels falhar com erro de
+  vídeo inválido, o plano B é hospedar o mp4 num asset de GitHub Release (que
+  sai como `video/mp4`) e apontar `REPO_RAW` do vídeo para lá. O post estático
+  não corre esse risco.
 
 ## Rodar na mão
 
