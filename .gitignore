@@ -2,3 +2,5 @@ __pycache__/
 *.pyc
 saida-amostra/
 ferramentas/
+*_token.txt
+*_secret.txt

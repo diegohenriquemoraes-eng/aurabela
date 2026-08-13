@@ -38,7 +38,10 @@ def token() -> str:
     if t:
         return t
     if os.path.exists(ARQUIVO_TOKEN):
-        with open(ARQUIVO_TOKEN, encoding="utf-8") as f:
+        # utf-8-sig, nao utf-8: o PowerShell grava BOM por padrao, e os 3 bytes
+        # invisiveis do BOM entram no comeco do token e a API responde
+        # "Cannot parse access token" — erro que nao parece de encoding.
+        with open(ARQUIVO_TOKEN, encoding="utf-8-sig") as f:
             return f.read().strip()
     raise SystemExit(
         "Sem token: defina IG_TOKEN_AURABELA no ambiente ou salve o token em "
