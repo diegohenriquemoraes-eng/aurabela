@@ -1,301 +1,326 @@
 {
-  "_leia": "Banco de posts estaticos. Campos: id, pilar, template (capa|editorial), etiqueta, gancho (vai na ARTE, curto), corpo (vai so na legenda), foto (arquivo em fotos/), foco_y opcional. Portugues revisado a mao. Pilar precisa existir em legenda.CICLO_PILAR.",
+  "_leia": "Banco de posts estaticos do feed. Campos comuns: id, pilar, formato, etiqueta, gancho (vai na ARTE, curto), corpo (vai so na legenda). Por formato: ritual -> passos[]; mito -> mito + verdade; dado -> numero + frase; produto -> produto (arquivo em produtos/) + beneficio; retrato -> foto (arquivo em fotos/) + foco_y opcional; frase -> so o gancho (+ assinatura opcional). O pilar precisa existir em legenda.CICLO_PILAR e o formato em publicar_estatico.FORMATOS. IMPORTANTE: 'retrato' e o unico formato que gasta foto do rosto da Marcia — o banco tem so 3 (ids 5, 9 e 24) de proposito, e a curadoria ainda limita a 1 rosto a cada 6 pecas publicadas. Nao aumentar sem ler ESTRATEGIA-FEED.md.",
   "posts": [
     {
       "id": 1,
       "pilar": "educativo",
-      "template": "editorial",
+      "formato": "ritual",
       "etiqueta": "rotina",
       "gancho": "A ordem certa de passar o seu skincare",
-      "corpo": "Quase todo mundo erra o passo 3.\n\nA regra é simples: do mais líquido para o mais denso. Se você inverte, o creme mais pesado cria uma barreira e o produto seguinte não entra.\n\n1. Limpar — tira a oleosidade e a poluição do dia\n2. Tônico — devolve o equilíbrio da pele\n3. Sérum — é aqui que mora o ativo (o passo que mais gente pula)\n4. Hidratante — sela tudo o que veio antes\n5. Protetor solar — de manhã, sempre, mesmo em casa\n\nÀ noite, o protetor sai e entra o creme de tratamento.\n\nNão precisa ter todos. Precisa ter os certos, na ordem.",
-      "foto": "ref-02-closeup-frontal-oculos-grau.webp"
+      "passos": [
+        "Limpar — tira a oleosidade e a poluição do dia",
+        "Tônico — devolve o equilíbrio da pele",
+        "Sérum — é aqui que mora o ativo",
+        "Hidratante — sela tudo o que veio antes",
+        "Protetor — de manhã, sempre, mesmo em casa"
+      ],
+      "corpo": "Quase todo mundo erra o passo 3.\n\nA regra é simples: do mais líquido para o mais denso. Se você inverte, o creme mais pesado cria uma barreira e o produto seguinte não entra.\n\nÀ noite, o protetor sai e entra o creme de tratamento.\n\nNão precisa ter todos. Precisa ter os certos, na ordem."
     },
     {
       "id": 2,
       "pilar": "autocuidado",
-      "template": "capa",
+      "formato": "frase",
       "etiqueta": "autocuidado 30+",
       "gancho": "Você foi ensinada a cuidar de todos, menos de você.",
-      "corpo": "A gente aprende cedo a ser a última da fila.\n\nO café da manhã dos outros, a roupa dos outros, o problema dos outros. E aí chega a noite e você percebe que não gastou 5 minutos com a sua própria cara.\n\nSkincare não é vaidade. É o único momento do dia em que você encosta em você com carinho.\n\nSão 5 minutos. Você tem 5 minutos.\n\nSe você não se escolher, ninguém vai escolher por você.",
-      "foto": "ref-03-closeup-oculos-boina.jpg"
+      "corpo": "A gente aprende a perguntar \"e você, já comeu?\" pra todo mundo, e esquece de perguntar pra si mesma.\n\nCuidar da pele não é vaidade. É o único momento do dia em que você para dois minutos e faz alguma coisa que é só sua.\n\nComeça por aí. Dois minutos."
     },
     {
       "id": 3,
       "pilar": "educativo",
-      "template": "editorial",
-      "etiqueta": "erro comum",
-      "gancho": "Lavar o rosto com sabonete de corpo envelhece a sua pele",
-      "corpo": "Parece detalhe. Não é.\n\nO sabonete de corpo tem pH alto — ele foi feito para tirar sujeira pesada da pele grossa do corpo. No rosto, ele arranca o manto ácido que protege você.\n\nO resultado você conhece: aquela pele repuxada logo depois do banho. Isso não é limpeza. É a sua barreira gritando.\n\nE aí acontece o efeito rebote: a pele produz MAIS óleo pra compensar. Você lava mais, ela oleia mais.\n\nSabonete facial custa pouco e muda tudo.",
-      "foto": "ref-01-closeup-frontal-sem-oculos.jpg"
+      "formato": "mito",
+      "etiqueta": "mito x verdade",
+      "gancho": "Sabonete de corpo serve para o rosto",
+      "mito": "Sabonete de corpo serve pro rosto — é tudo pele.",
+      "verdade": "A pele do rosto é mais fina e tem outro pH. Sabonete de corpo arranca a barreira e ela responde com mais oleosidade.",
+      "corpo": "É o erro mais comum que eu vejo — e o mais barato de corrigir.\n\nA pele do rosto tem a barreira mais delicada do corpo. Sabonete de corpo é alcalino demais: tira a proteção junto com a sujeira. Aí a pele resseca, se assusta e produz mais óleo pra compensar.\n\nResultado: pele oleosa E ressecada ao mesmo tempo. Sim, dá as duas coisas."
     },
     {
       "id": 4,
       "pilar": "produto",
-      "template": "capa",
-      "etiqueta": "o que eu uso",
-      "gancho": "O trio que eu não largo — e o porquê de cada um",
-      "corpo": "Não é o mais caro. É o que eu realmente uso todo dia:\n\n🧴 Limpeza — porque pele suja não absorve nada. É o passo que faz os outros funcionarem.\n\n💧 Hidratante — pele 30+ perde água mais rápido. Hidratar não é luxo, é reposição.\n\n☀️ Protetor solar — 80% do envelhecimento visível vem do sol. Nenhum creme caro compensa a falta dele.\n\nSe você só puder ter três, tenha esses três. O resto é refinamento.",
-      "foto": "ref-12-selfie-oculos-sol-sorrindo.jpg"
+      "formato": "produto",
+      "etiqueta": "o básico bem feito",
+      "gancho": "O trio que eu não largo",
+      "produto": "kit-basico-timewise.png",
+      "beneficio": "Limpar, hidratar e proteger. O resto é detalhe.",
+      "corpo": "Se eu pudesse ficar com três produtos só, seriam estes.\n\nLimpeza que não resseca, hidratante com antioxidante e protetor. Esse trio segura 80% do resultado — o resto é refinamento.\n\nComeçar por aqui é mais barato e funciona melhor do que comprar sete potes ao mesmo tempo e não usar nenhum direito."
     },
     {
       "id": 5,
       "pilar": "prova",
-      "template": "capa",
-      "etiqueta": "pele real",
+      "formato": "retrato",
+      "etiqueta": "sem filtro",
       "gancho": "Minha pele aos 40, sem filtro e sem promessa milagrosa",
-      "corpo": "Eu não vou te dizer que existe creme que apaga o tempo. Não existe.\n\nO que existe é constância. E a diferença aparece assim:\n\n· A pele fica mais uniforme, não mais jovem\n· O viço volta antes das rugas sumirem (e o viço é o que as pessoas notam)\n· A maquiagem passa a assentar bonito, porque a base agora é lisa\n\nO que mudou na minha não foi um produto. Foi eu ter parado de começar e desistir.\n\nConstância vence ingrediente caro. Sempre.",
-      "foto": "ref-05-sorrindo-oculos-sol.jpg",
-      "foco_y": 0.3
+      "foto": "ref-01-closeup-frontal-sem-oculos.jpg",
+      "foco_y": 0.3,
+      "corpo": "Essa é a minha pele. Tem poro, tem linha de expressão, tem dia bom e dia ruim.\n\nO que mudou não foi um produto mágico — foi parar de trocar de rotina toda semana.\n\nEu não vendo pele perfeita. Vendo pele cuidada."
     },
     {
       "id": 6,
       "pilar": "educativo",
-      "template": "editorial",
-      "etiqueta": "protetor solar",
-      "gancho": "Sim, você precisa de protetor dentro de casa",
-      "corpo": "A luz que entra pela janela e a luz azul da tela também marcam a sua pele.\n\nOs raios UVA atravessam vidro. Eles não queimam — por isso você não sente nada. Mas são eles que causam manchas e flacidez.\n\nQuem trabalha em casa perto da janela pega sol o dia inteiro sem perceber.\n\nA regra prática: passou das 7h da manhã e você está acordada? Protetor.\n\nE reaplica no meio do dia. Uma vez de manhã não cobre 12 horas.",
-      "foto": "ref-04-sorrindo-oculos-restaurante.jpg"
+      "formato": "mito",
+      "etiqueta": "mito x verdade",
+      "gancho": "Protetor solar é só pra praia",
+      "mito": "Protetor solar é só pra quem vai pegar sol.",
+      "verdade": "A luz da janela e a da tela também marcam. Quem trabalha dentro de casa envelhece de um lado só do rosto.",
+      "corpo": "Existe um estudo clássico de um caminhoneiro que passou 28 anos com o lado esquerdo do rosto na janela. Os dois lados tinham a mesma idade. Não pareciam.\n\nUVA atravessa vidro. Você não sente, não queima, não fica vermelha — e ela vai marcando.\n\nProtetor de manhã, todo dia, mesmo sem sair."
     },
     {
       "id": 7,
       "pilar": "produto",
-      "template": "capa",
-      "etiqueta": "perfume",
-      "gancho": "Perfume não é cheiro. É memória.",
-      "corpo": "Você já sentiu um cheiro na rua e voltou 20 anos no tempo?\n\nO olfato é o único sentido que vai direto para a área da memória e da emoção no cérebro. Por isso perfume marca tanto.\n\nÉ por isso também que ele é o presente que mais emociona — e o que a pessoa lembra de quem deu, toda vez que usa.\n\nNa hora de escolher, pense menos em “qual está na moda” e mais em: que sensação eu quero que ela tenha?\n\nDoce e quente aconchega. Cítrico dá leveza. Amadeirado dá presença.",
-      "foto": "ref-04-sorrindo-oculos-restaurante.jpg"
+      "formato": "produto",
+      "etiqueta": "pele que repuxa",
+      "gancho": "Para quando a pele repuxa depois do banho",
+      "produto": "oleo-nutritivo.png",
+      "beneficio": "Duas gotas no hidratante. A pele para de repuxar no mesmo dia.",
+      "corpo": "Aquela sensação de pele esticada depois do banho não é limpeza. É a barreira pedindo socorro.\n\nDuas gotas de óleo misturadas no hidratante da noite resolvem em poucos dias. Não é oleosidade — é lipídio, que é o que falta.\n\nQuem tem pele mista pode usar só na área seca."
     },
     {
       "id": 8,
       "pilar": "educativo",
-      "template": "editorial",
-      "etiqueta": "pele 30+",
-      "gancho": "O que muda na pele depois dos 30 (e ninguém te avisa)",
-      "corpo": "Não é impressão sua. A pele muda mesmo:\n\n· A renovação celular desacelera — a pele fica opaca porque as células mortas demoram mais pra sair\n· O colágeno cai cerca de 1% ao ano a partir dos 25\n· A pele retém menos água, mesmo quem tem pele oleosa\n· As manchas aparecem mais fácil e saem mais devagar\n\nA boa notícia: tudo isso responde a cuidado. Não some, mas melhora muito.\n\nO que não dá é pra usar aos 40 a mesma rotina que você usava aos 20.",
-      "foto": "ref-02-closeup-frontal-oculos-grau.webp"
+      "formato": "dado",
+      "etiqueta": "o que ninguém avisa",
+      "gancho": "O que muda na pele depois dos 30",
+      "numero": "1%",
+      "frase": "do colágeno da pele vai embora por ano depois dos 30.",
+      "corpo": "Não é sensação sua: a pele muda mesmo.\n\nA partir dos 30 a produção de colágeno cai cerca de 1% ao ano. A renovação celular desacelera, a pele segura menos água e a mesma rotina de sempre passa a entregar menos.\n\nNão dá pra parar. Dá pra desacelerar — e o que mais desacelera é constância, não produto caro."
     },
     {
       "id": 9,
       "pilar": "prova",
-      "template": "capa",
+      "formato": "retrato",
       "etiqueta": "30 dias",
       "gancho": "O que muda em 30 dias de constância",
-      "corpo": "Um estudo publicado na revista Cosmetics mostrou uma coisa linda: 28 dias de rotina de skincare melhoraram não só a pele, mas o humor e a autoestima das participantes.\n\nFaz sentido. Cuidar de si muda como você se olha no espelho — e isso muda o dia inteiro.\n\nO ciclo de renovação da pele leva cerca de 28 dias. Por isso ninguém vê resultado em 3 dias e desiste na primeira semana.\n\nDá 30 dias pra você. É pouco tempo pra mudar uma vida inteira de pele.",
-      "foto": "ref-01-closeup-frontal-sem-oculos.jpg",
-      "foco_y": 0.28
+      "foto": "ref-02-closeup-frontal-oculos-grau.webp",
+      "foco_y": 0.28,
+      "corpo": "Trinta dias não mudam a sua genética. Mudam o brilho, a textura e a maciez — e isso já muda como você se olha.\n\nSemana 1: a pele para de repuxar.\nSemana 2: a maquiagem assenta melhor.\nSemana 3: some aquele aspecto opaco.\nSemana 4: a textura fica mais lisa ao toque.\n\nNada disso é milagre. É repetição."
     },
     {
       "id": 10,
       "pilar": "produto",
-      "template": "editorial",
-      "etiqueta": "escolha certa",
+      "formato": "ritual",
+      "etiqueta": "antes de comprar",
       "gancho": "Antes de comprar creme caro, responda isso",
-      "corpo": "Qual é o seu tipo de pele?\n\nSe você não sabe, qualquer produto é aposta — e é assim que a gente gasta dinheiro com o que não funciona.\n\nO teste da manhã: lave o rosto só com água, não passe nada e espere 1 hora.\n\n· Repuxou e ficou áspera → pele seca\n· Brilhou toda → pele oleosa\n· Brilhou só na testa e no nariz → pele mista\n· Ficou confortável → pele normal\n· Ardeu ou avermelhou → pele sensível (cuidado redobrado)\n\nDescobriu? Agora a compra deixa de ser aposta.",
-      "foto": "ref-07-perfil-oculos-sol.jpg"
+      "passos": [
+        "Você lava o rosto com produto de rosto?",
+        "Você usa protetor todo dia, inclusive em casa?",
+        "Você usa o que já tem até acabar?"
+      ],
+      "corpo": "Se a resposta for não em alguma delas, o creme caro não vai resolver.\n\nEu já vi muita gente gastando em sérum de alto valor e lavando o rosto com sabonete de corpo. É como comprar tênis de corrida e correr na areia fofa.\n\nArruma a base primeiro. Aí o produto bom aparece."
     },
     {
       "id": 11,
       "pilar": "autocuidado",
-      "template": "capa",
+      "formato": "frase",
       "etiqueta": "espelho",
       "gancho": "Quando foi a última vez que você se olhou sem procurar defeito?",
-      "corpo": "A gente chega no espelho e o olho vai direto: a mancha, a ruga nova, o cansaço.\n\nNunca vai pro que está bonito.\n\nExperimenta uma coisa amanhã de manhã: olha e acha UMA coisa que você gosta. Só uma. O olhar, o sorriso, o formato do rosto.\n\nParece bobagem, mas você está treinando o cérebro a fazer o contrário do que ele faz há anos.\n\nCuidar da pele com raiva de si mesma não funciona. Cuidar com carinho, sim.",
-      "foto": "ref-03-closeup-oculos-boina.jpg"
+      "corpo": "A gente chega no espelho já com a lista pronta: a mancha, a olheira, a linha nova.\n\nTenta uma coisa hoje: olha e acha uma coisa boa. Uma só.\n\nCuidar da pele fica muito mais fácil quando não é castigo."
     },
     {
       "id": 12,
       "pilar": "educativo",
-      "template": "editorial",
-      "etiqueta": "mito",
-      "gancho": "Pele oleosa também precisa de hidratante",
-      "corpo": "Esse é o erro que mais vejo.\n\nOleosidade e hidratação são coisas diferentes. Óleo é gordura. Hidratação é água.\n\nDá pra ter uma pele oleosa E desidratada ao mesmo tempo — aliás, é super comum.\n\nQuando você resseca a pele achando que está controlando o óleo, ela entende que está em risco e produz ainda mais óleo pra se proteger.\n\nVocê entra num ciclo: resseca → oleia → resseca mais.\n\nO caminho é hidratante leve, em gel, oil-free. Hidratar acalma a produção de óleo.",
-      "foto": "ref-01-closeup-frontal-sem-oculos.jpg"
+      "formato": "mito",
+      "etiqueta": "mito x verdade",
+      "gancho": "Pele oleosa não precisa de hidratante",
+      "mito": "Pele oleosa não precisa de hidratante.",
+      "verdade": "Pele sem água produz MAIS óleo para se defender. Hidratar é o que desliga a oleosidade.",
+      "corpo": "Óleo e água são coisas diferentes. Dá pra ter muito óleo e nenhuma água ao mesmo tempo — é o quadro mais comum que eu vejo.\n\nQuando você tira o óleo e não repõe água, a pele entende que está em risco e produz o dobro. Aí você lava de novo. E o ciclo se fecha.\n\nHidratante em gel, textura leve, sem óleo. Todo dia."
     },
     {
       "id": 13,
       "pilar": "prova",
-      "template": "capa",
-      "etiqueta": "cliente",
-      "gancho": "Ela me disse: “eu tinha desistido da minha pele”",
-      "corpo": "Ela tinha 47 anos e já tinha tentado de tudo.\n\nComprava por indicação de amiga, usava duas semanas, não via nada, largava. Depois comprava outro. E outro.\n\nO problema nunca foi o produto. Era não ter um plano.\n\nA gente montou uma rotina de 3 passos. Só três. Com o que a pele DELA precisava.\n\nDois meses depois ela me mandou uma foto sem base. Escreveu: “eu não sabia que ainda dava”.\n\nSempre dá. Só precisa parar de recomeçar do zero.",
-      "foto": "ref-04-sorrindo-oculos-restaurante.jpg"
+      "formato": "frase",
+      "etiqueta": "recebido no direct",
+      "gancho": "“Eu já tinha desistido da minha pele.”",
+      "assinatura": "mensagem de uma cliente",
+      "corpo": "Ela me mandou isso no Direct antes de começar. Já tinha tentado de tudo, se frustrado com tudo, e concluído que o problema era ela.\n\nNão era. Era rotina demais, produto demais, paciência de menos.\n\nA gente cortou pela metade. Três passos, todo dia. Hoje ela me manda foto sem filtro."
     },
     {
       "id": 14,
       "pilar": "produto",
-      "template": "capa",
-      "etiqueta": "custo x benefício",
-      "gancho": "Caro é o produto que você compra e não usa",
-      "corpo": "Eu prefiro te vender três produtos que você vai usar todo dia do que sete que vão morrer na gaveta.\n\nFaz a conta comigo: um creme de R$ 120 que dura 3 meses sai a R$ 1,30 por dia. É menos que um cafezinho.\n\nAgora um kit de R$ 300 que você usa duas semanas e abandona — esse sim foi caro.\n\nO cálculo certo não é o preço da etiqueta. É o preço por dia de uso.\n\nPor isso eu sempre pergunto sua rotina antes de indicar qualquer coisa.",
-      "foto": "ref-10-espelho-meio-corpo.jpg",
-      "foco_y": 0.2
+      "formato": "frase",
+      "etiqueta": "conta que ninguém faz",
+      "gancho": "Caro é o produto que você compra e não usa.",
+      "corpo": "Um pote de 150 reais que dura 4 meses sai a 1,25 por dia.\n\nUm de 60 reais parado na gaveta sai a 60 reais.\n\nNão existe produto caro. Existe produto que entra na sua rotina e produto que não entra. Antes de olhar o preço, olha se você vai usar."
     },
     {
       "id": 15,
       "pilar": "educativo",
-      "template": "editorial",
+      "formato": "dado",
       "etiqueta": "à noite",
-      "gancho": "Dormir de maquiagem custa mais caro do que você imagina",
-      "corpo": "Uma noite não mata ninguém. O hábito, sim.\n\nDurante a noite a pele faz a renovação celular — é o horário em que ela trabalha. Com maquiagem por cima, o poro fica selado com resíduo, oleosidade e poluição do dia inteiro.\n\nO que acontece com o tempo:\n\n· Cravos e poros dilatados\n· Pele opaca, sem viço\n· Os cílios ficam quebradiços (a máscara resseca a raiz)\n\nCansada demais? Deixa um lenço de limpeza na mesinha de cabeceira.\n\nMeia limpeza é infinitamente melhor que nenhuma.",
-      "foto": "ref-02-closeup-frontal-oculos-grau.webp"
+      "gancho": "Dormir de maquiagem custa caro",
+      "numero": "8h",
+      "frase": "de maquiagem dormida entopem o poro e envelhecem a pele mais rápido.",
+      "corpo": "São oito horas de base, poluição e oleosidade em cima de uma pele que deveria estar se renovando.\n\nÉ à noite que a pele trabalha: renova célula, repara o dano do dia, produz colágeno. Com o poro fechado por maquiagem, ela faz isso pela metade.\n\nSe você está exausta, o mínimo é água micelar no algodão. Trinta segundos."
     },
     {
       "id": 16,
-      "pilar": "renda-extra",
-      "template": "editorial",
-      "etiqueta": "mitos",
-      "gancho": "5 mitos sobre ser consultora que travam muita gente",
-      "corpo": "1. “Precisa ser vendedora nata” — não. Precisa gostar de gente e ser honesta.\n\n2. “Tem que comprar um estoque enorme” — não. Você começa pequeno e cresce conforme vende.\n\n3. “Vou ter que encher o saco dos amigos” — pelo contrário. Quem incomoda vende uma vez. Quem ajuda vende sempre.\n\n4. “Não tenho tempo” — dá pra fazer no intervalo, na fila do banco, à noite.\n\n5. “Já tem gente demais fazendo isso” — e tem mulher demais precisando de quem entenda de pele.\n\nO que trava não é o mercado. É achar que precisa estar pronta.",
-      "foto": "ref-09-corpo-inteiro-blazer.jpg",
-      "foco_y": 0.16
+      "pilar": "educativo",
+      "formato": "ritual",
+      "etiqueta": "rotina da noite",
+      "gancho": "A noite é quando a pele trabalha",
+      "passos": [
+        "Tirar tudo — maquiagem, protetor e poluição",
+        "Limpar de verdade, com produto de rosto",
+        "Tratar — sérum ou creme de tratamento",
+        "Selar com hidratante e dormir"
+      ],
+      "corpo": "De dia a pele se defende. De noite ela repara.\n\nPor isso o protetor é o herói da manhã e o tratamento é o herói da noite — trocar a ordem desperdiça os dois.\n\nQuatro passos. Dá cinco minutos, no máximo."
     },
     {
       "id": 17,
       "pilar": "autocuidado",
-      "template": "capa",
-      "etiqueta": "5 minutos",
+      "formato": "frase",
+      "etiqueta": "cinco minutos",
       "gancho": "Você já reservou 5 minutos pra você hoje?",
-      "corpo": "Não é sobre a pele. É sobre o que esses 5 minutos representam.\n\nÉ o momento do dia em que ninguém te chama, ninguém precisa de nada, e você faz algo só porque te faz bem.\n\nA gente romantiza o autocuidado como spa e viagem. Mas ele mora no ordinário: lavar o rosto com calma, passar o creme sem pressa, respirar.\n\nCinco minutos de manhã. Cinco à noite.\n\nÉ o mínimo que você merece — e provavelmente é mais do que você tem se dado.",
-      "foto": "ref-12-selfie-oculos-sol-sorrindo.jpg"
+      "corpo": "Não precisa ser uma hora de banheira e vela acesa. Cinco minutos.\n\nLavar o rosto sem pressa, passar o creme prestando atenção, respirar.\n\nÉ pouco. Mas é todo dia — e é isso que faz diferença, na pele e no resto."
     },
     {
       "id": 18,
       "pilar": "educativo",
-      "template": "editorial",
+      "formato": "ritual",
       "etiqueta": "manchas",
       "gancho": "Por que a mancha volta sempre no mesmo lugar",
-      "corpo": "Melasma e manchas de sol não são “sujeira” que sai esfregando.\n\nSão células de pigmento que ficaram hiperativas naquele ponto. Elas não desaparecem — elas acalmam ou se agitam.\n\nO que agita: sol sem proteção, calor (sim, calor de fogão e secador também), atrito ao esfregar o rosto e alteração hormonal.\n\nO que acalma: protetor solar religiosamente, ativos clareadores com paciência e não coçar nem esfregar.\n\nPor isso quem clareia e depois pega sol volta à estaca zero.\n\nMancha é maratona, não corrida.",
-      "foto": "ref-01-closeup-frontal-sem-oculos.jpg"
+      "passos": [
+        "Clarear o que já está lá",
+        "Renovar a pele com constância",
+        "Proteger — sem isso, tudo volta"
+      ],
+      "corpo": "Mancha tem memória. A célula que produziu pigmento demais uma vez faz de novo com muito menos estímulo.\n\nPor isso clarear sem proteger é enxugar gelo: você tira, o sol devolve.\n\nA ordem importa: proteção não é o último passo do tratamento. É o que sustenta ele."
     },
     {
       "id": 19,
       "pilar": "prova",
-      "template": "capa",
-      "etiqueta": "verdade",
-      "gancho": "Eu prefiro te indicar o certo do que te vender o caro",
-      "corpo": "Já perdi venda por isso e faria de novo.\n\nTeve uma cliente que queria o kit completo. Eu olhei a pele dela e falei: você não precisa disso agora. Compra só dois e volta em 60 dias.\n\nEla comprou os dois. E voltou. E indicou três amigas.\n\nVender o que a pessoa não precisa dá dinheiro uma vez. Indicar o certo dá cliente pra vida inteira.\n\nEu vendo cosmético, mas o que eu construo é confiança. Sem ela, não tem segunda compra.",
-      "foto": "ref-05-sorrindo-oculos-sol.jpg",
-      "foco_y": 0.3
+      "formato": "frase",
+      "etiqueta": "como eu trabalho",
+      "gancho": "Prefiro te indicar o certo do que te vender o caro.",
+      "assinatura": "Marcia · AuraBela",
+      "corpo": "Já teve gente querendo comprar o kit completo e eu segurar: \"começa com dois, usa até acabar, depois a gente conversa\".\n\nPerco venda no dia. Ganho cliente por anos.\n\nSe você me chamar no Direct e a resposta certa for \"você não precisa disso\", é isso que eu vou te dizer."
     },
     {
       "id": 20,
       "pilar": "produto",
-      "template": "editorial",
-      "etiqueta": "sérum",
-      "gancho": "O sérum é o passo que quase todo mundo pula",
-      "corpo": "E é justamente o que carrega o ativo.\n\nO hidratante cuida da superfície. O sérum tem moléculas menores e entra mais fundo — é ele que trata de verdade.\n\nComo usar sem errar:\n\n· Sempre depois de limpar e antes do hidratante\n· 2 a 3 gotas dão conta do rosto inteiro (mais que isso é desperdício)\n· Espalhe com leve pressão, não esfregue\n· Espere absorver antes do próximo passo\n\nÉ o produto que mais muda resultado e o que mais fica esquecido na gaveta.",
-      "foto": "ref-07-perfil-oculos-sol.jpg"
+      "formato": "produto",
+      "etiqueta": "o passo que quase todo mundo pula",
+      "gancho": "O sérum entra onde o creme não chega",
+      "produto": "serum-facial-renovador-c-e-timewise.png",
+      "beneficio": "Vitamina C + E na camada em que o hidratante não entra.",
+      "corpo": "O hidratante trabalha na superfície: ele segura a água que já está ali. O sérum tem molécula menor e entra mais fundo, onde mora o ativo.\n\nÉ por isso que a ordem importa. Sérum antes, creme depois — o contrário vira barreira.\n\nSe você só puder acrescentar um passo na sua rotina este mês, acrescenta esse."
     },
     {
       "id": 21,
       "pilar": "autocuidado",
-      "template": "capa",
-      "etiqueta": "comparação",
+      "formato": "frase",
+      "etiqueta": "verdade",
       "gancho": "A pele do Instagram não existe.",
-      "corpo": "Filtro, luz de anel, retoque, maquiagem profissional e vinte fotos descartadas pra uma dar certo.\n\nVocê está comparando a sua manhã real com o melhor momento editado de outra pessoa.\n\nPoro existe. Textura existe. Linha de expressão existe — e ela conta que você riu bastante.\n\nO objetivo não é ter pele de 20 anos. É ter uma pele saudável, cuidada e sua.\n\nQuando você para de perseguir uma pele que não existe, você finalmente começa a cuidar da que você tem.",
-      "foto": "ref-03-closeup-oculos-boina.jpg"
+      "corpo": "Filtro, luz de anel, edição e, muitas vezes, procedimento. Nada disso aparece na legenda.\n\nVocê está comparando a sua pele às 22h com a pele de outra pessoa depois de três camadas de tratamento — de imagem.\n\nPele real tem poro. Pele real tem textura. Pele saudável não é pele lisa de propaganda."
     },
     {
       "id": 22,
       "pilar": "educativo",
-      "template": "editorial",
-      "etiqueta": "pescoço",
+      "formato": "mito",
+      "etiqueta": "mito x verdade",
       "gancho": "O pescoço entrega a idade que o rosto esconde",
-      "corpo": "A pele do pescoço e do colo é mais fina que a do rosto e tem menos glândulas de óleo.\n\nTraduzindo: resseca mais rápido, marca mais fácil e é a primeira região a mostrar flacidez.\n\nE é justamente onde ninguém passa nada.\n\nA correção é simples: tudo que você passa no rosto, leve até o colo. Hidratante, sérum e principalmente o protetor solar.\n\nO movimento certo é de baixo pra cima, sempre. Nunca puxando pra baixo.\n\nLeva 10 segundos a mais e muda o conjunto todo.",
-      "foto": "ref-02-closeup-frontal-oculos-grau.webp"
+      "mito": "Cuidar do rosto é suficiente.",
+      "verdade": "O pescoço e o colo têm pele mais fina e menos glândula. Envelhecem primeiro — e é lá que a idade aparece.",
+      "corpo": "Você cuida do rosto há anos, olha no espelho e acha que está tudo certo. Aí vê uma foto de perfil.\n\nA pele do pescoço tem menos suporte e recebe muito mais sol do que a gente imagina.\n\nRegra fácil: o que sobrar na mão depois do rosto, você espalha no pescoço e no colo, sempre de baixo pra cima. Custa zero."
     },
     {
       "id": 23,
-      "pilar": "renda-extra",
-      "template": "capa",
-      "etiqueta": "começo",
-      "gancho": "Toda mudança começa numa decisão que dá medo",
-      "corpo": "Eu lembro do dia em que decidi. Estava com medo, achando que não ia dar conta.\n\nNão dei conta de tudo de uma vez. Dei conta de um passo por vez.\n\nO que ninguém te conta é que você não precisa estar pronta. Ninguém está.\n\nVocê aprende fazendo — atendendo a primeira cliente, errando o primeiro pedido, acertando o segundo.\n\nSe você está esperando o momento perfeito pra começar algo seu, ele não vem.\n\nO que vem é a segunda-feira. E ela serve.",
-      "foto": "ref-08-corpo-inteiro-cadeira.jpg",
-      "foco_y": 0.14
+      "pilar": "autocuidado",
+      "formato": "frase",
+      "etiqueta": "recomeço",
+      "gancho": "Toda mudança começa numa decisão que dá medo.",
+      "corpo": "Trocar de rotina dá medo. Investir em você dá medo. Aparecer numa foto sem filtro dá medo.\n\nMas nada muda enquanto a gente espera a coragem chegar antes da decisão. É o contrário: decide, e a coragem vem no caminho.\n\nHoje pode ser um passo pequeno. Cinco minutos com a sua pele já conta."
     },
     {
       "id": 24,
       "pilar": "prova",
-      "template": "editorial",
-      "etiqueta": "testei",
+      "formato": "retrato",
+      "etiqueta": "testado antes",
       "gancho": "Testei por 60 dias antes de indicar pra você",
-      "corpo": "Eu não indico nada que eu não tenha usado na minha própria cara.\n\nPorque é fácil repetir o que está escrito na embalagem. Difícil é dizer como o produto se comporta no calor, se pilota debaixo da base, se arde perto do olho.\n\nO que eu observo em 60 dias:\n\n· Como a pele reage na primeira semana (às vezes piora antes de melhorar)\n· Se o resultado se mantém ou é só o efeito do começo\n· Se vale o preço no uso diário\n\nQuando eu te digo que funciona, é porque eu vi funcionar aqui.",
-      "foto": "ref-01-closeup-frontal-sem-oculos.jpg"
+      "foto": "ref-03-closeup-oculos-boina.jpg",
+      "foco_y": 0.3,
+      "corpo": "Eu não indico o que não usei. Ponto.\n\nSessenta dias é o tempo mínimo pra saber se um produto entrega ou se é só cheiro bom e embalagem bonita.\n\nSe eu não te ofereci alguma coisa, provavelmente é porque eu testei e não gostei."
     },
     {
       "id": 25,
       "pilar": "produto",
-      "template": "capa",
-      "etiqueta": "presente",
-      "gancho": "Presente que a pessoa usa todo dia vale mais que flor",
-      "corpo": "Flor murcha em uma semana. Perfume e creme duram meses — e todo dia que ela usa, ela lembra de você.\n\nO que mais sai como presente por aqui:\n\n· Kit de skincare — pra quem quer começar e não sabe por onde\n· Perfume — memória afetiva em frasco\n· Batom + hidratante labial — o presente pequeno que sempre acerta\n\nE se você não souber o que ela usa, me chama que eu te ajudo a escolher pelo perfil dela.\n\nAcertar o presente é sobre conhecer a pessoa, não sobre gastar mais.",
-      "foto": "ref-04-sorrindo-oculos-restaurante.jpg"
+      "formato": "produto",
+      "etiqueta": "presente que se usa",
+      "gancho": "Presente que a pessoa usa todo dia",
+      "produto": "kit-labios-de-seda-karite-aroma-de-cha-branco-citrus.png",
+      "beneficio": "Esfolia e sela. Lábio liso mesmo no ar-condicionado.",
+      "corpo": "Flor murcha em três dias. Chocolate acaba na mesma noite.\n\nUm cuidado que a pessoa usa toda manhã lembra de você por meses — e é a categoria de presente que mais acerta, porque quase ninguém compra pra si mesma.\n\nDica: presenteia o que a pessoa não compraria sozinha."
     },
     {
       "id": 26,
       "pilar": "educativo",
-      "template": "editorial",
-      "etiqueta": "esfoliação",
-      "gancho": "Esfoliar demais é pior do que não esfoliar",
-      "corpo": "A esfoliação tira as células mortas e devolve o viço. Ótimo — quando é na medida.\n\nO exagero destrói a barreira de proteção da pele. E aí vem: vermelhidão, ardência ao passar qualquer produto, pele sensível do nada e mais oleosidade.\n\nA medida certa:\n\n· Pele normal a oleosa — 1 a 2 vezes por semana\n· Pele seca ou sensível — 1 vez por semana, no máximo\n· Pele com acne inflamada — nada de esfoliante físico\n\nE nunca esfregue com força. A esfoliação é para a pele, não contra ela.",
-      "foto": "ref-02-closeup-frontal-oculos-grau.webp"
+      "formato": "mito",
+      "etiqueta": "mito x verdade",
+      "gancho": "Esfoliar todo dia deixa a pele mais lisa",
+      "mito": "Quanto mais eu esfolio, mais lisa a pele fica.",
+      "verdade": "Esfoliar demais tira a barreira. A pele fica sensível, vermelha e — de novo — mais oleosa.",
+      "corpo": "Esfoliação é acelerador de renovação, não borracha de apagar.\n\nUma a duas vezes por semana é o suficiente para a maioria das peles. Todo dia é agressão: arde, descama e a pele revida.\n\nSe depois de esfoliar arde ao passar o hidratante, você passou do ponto. Dá uma semana de folga."
     },
     {
       "id": 27,
       "pilar": "autocuidado",
-      "template": "capa",
-      "etiqueta": "tempo",
+      "formato": "frase",
+      "etiqueta": "sem culpa",
       "gancho": "Não é falta de tempo. É falta de prioridade — e tudo bem admitir.",
-      "corpo": "A gente arruma tempo pra tudo que considera importante.\n\nSe você não arruma 5 minutos pra sua pele, não é sobre o relógio. É sobre você ainda não estar na sua própria lista.\n\nE isso não é preguiça nem culpa. É costume — a gente foi ensinada assim.\n\nMas costume se muda. Começa pequeno: junta o skincare com algo que você já faz. Escova o dente, passa o creme. Já está no banheiro mesmo.\n\nHábito novo não nasce da força de vontade. Nasce de pegar carona num hábito velho.",
-      "foto": "ref-12-selfie-oculos-sol-sorrindo.jpg"
+      "corpo": "A gente arranja tempo para responder mensagem de trabalho às 23h, mas não para dois minutos de creme.\n\nNão é preguiça. É que você aprendeu que você vem por último.\n\nMudar isso não precisa ser grande. Começa colocando o hidratante do lado da escova de dente."
     },
     {
       "id": 28,
       "pilar": "prova",
-      "template": "capa",
-      "etiqueta": "antes de dormir",
-      "gancho": "A pele que você vai ter aos 60 começa no que você faz hoje",
-      "corpo": "Isso não é ameaça. É a melhor notícia do post.\n\nSignifica que ainda dá tempo — em qualquer idade que você esteja lendo isso.\n\nA pele responde a cuidado até o fim da vida. Ela renova mais devagar, mas renova.\n\nO que faz diferença daqui pra frente:\n\n· Protetor solar todo dia (esse é o campeão absoluto)\n· Hidratação constante, não só quando repuxa\n· Não fumar e beber água\n· Constância, mesmo imperfeita\n\nA melhor hora pra começar foi há 20 anos. A segunda melhor é hoje à noite.",
-      "foto": "ref-05-sorrindo-oculos-sol.jpg",
-      "foco_y": 0.3
+      "formato": "dado",
+      "etiqueta": "o que ninguém conta",
+      "gancho": "A pele que você vai ter aos 60 começa hoje",
+      "numero": "80%",
+      "frase": "do envelhecimento da pele vem do sol — não da idade.",
+      "corpo": "A idade é só o relógio. O sol é o que faz o estrago.\n\nÉ chamado de fotoenvelhecimento e responde pela maior parte das manchas, das linhas e da flacidez que a gente atribui ao tempo.\n\nA boa notícia: é a única parte do envelhecimento que está no seu controle — e o controle custa um passo de manhã."
     },
     {
       "id": 29,
       "pilar": "produto",
-      "template": "editorial",
-      "etiqueta": "kit iniciante",
+      "formato": "ritual",
+      "etiqueta": "começando do zero",
       "gancho": "Começando do zero? Compre nessa ordem",
-      "corpo": "Não precisa comprar tudo de uma vez. Aliás, não deveria.\n\nA ordem que eu recomendo pra quem está começando:\n\n1º mês — sabonete facial e protetor solar. Só isso. É a base de tudo e já muda a pele.\n\n2º mês — hidratante adequado ao seu tipo de pele.\n\n3º mês — sérum com o ativo que resolve a SUA questão (mancha, linha, oleosidade).\n\nAssim você sente o que cada produto faz, seu bolso não sofre e você não abandona no meio.\n\nRotina que cabe no orçamento é rotina que dura.",
-      "foto": "ref-07-perfil-oculos-sol.jpg"
+      "passos": [
+        "Protetor solar — o que mais devolve resultado",
+        "Limpeza de rosto — o que para de estragar",
+        "Hidratante — o que recupera a barreira",
+        "Só então o sérum ou o tratamento"
+      ],
+      "corpo": "A ordem de compra não é a ordem de uso — e é aqui que quase todo mundo erra.\n\nQuem começa pelo sérum caro está tratando uma pele que continua sendo agredida todo dia. Quem começa pelo protetor para o dano primeiro.\n\nUm item por mês. Em quatro meses você tem uma rotina completa sem sentir no bolso."
     },
     {
       "id": 30,
-      "pilar": "renda-extra",
-      "template": "capa",
-      "etiqueta": "convite",
-      "gancho": "Se você já indica produto de graça, por que não ganhar por isso?",
-      "corpo": "Pensa bem: você já indica o creme que funcionou, o batom que você ama, o perfume que todo mundo pergunta.\n\nVocê já faz o trabalho. Só não recebe por ele.\n\nSer consultora é isso, com estrutura: você tem preço melhor pra você mesma, ganha nas indicações que já faria e aprende de verdade sobre pele.\n\nNão tem meta absurda nem chefe no seu pé. Tem o seu ritmo.\n\nSe isso fez sentido, vem conversar comigo — sem compromisso nenhum, só pra você entender como funciona.",
-      "foto": "ref-09-corpo-inteiro-blazer.jpg",
-      "foco_y": 0.16
+      "pilar": "produto",
+      "formato": "produto",
+      "etiqueta": "o mais importante",
+      "gancho": "Se for pra ter um só, que seja esse",
+      "produto": "protetor-solar-fps-50.png",
+      "beneficio": "O único passo que impede o dano em vez de tentar consertar depois.",
+      "corpo": "Todo o resto da rotina trata o que já aconteceu. Esse impede que aconteça.\n\nÉ o item com melhor retorno da prateleira inteira — e o mais pulado, porque o resultado dele é invisível: é tudo o que você não vai ter.\n\nDe manhã, no rosto, no pescoço e nas mãos."
     },
     {
       "id": 31,
       "pilar": "educativo",
-      "template": "editorial",
-      "etiqueta": "água",
-      "gancho": "Beber água não hidrata a sua pele (do jeito que você pensa)",
-      "corpo": "Água é essencial pro corpo — mas ela não sobe direto pra pele.\n\nA hidratação da pele acontece de fora pra dentro: o hidratante repõe água e sela pra ela não evaporar.\n\nSe fosse só beber água, ninguém teria pele ressecada em pleno inverno bebendo 3 litros por dia.\n\nO que realmente hidrata a pele:\n\n· Hidratante com ácido hialurônico ou glicerina (puxa água)\n· Um creme por cima pra selar (evita a perda)\n· Banho morno, nunca quente — água quente tira a proteção natural\n\nBebe água pelo corpo. Passa creme pela pele. As duas coisas.",
-      "foto": "ref-01-closeup-frontal-sem-oculos.jpg"
+      "formato": "mito",
+      "etiqueta": "mito x verdade",
+      "gancho": "Beber água hidrata a sua pele",
+      "mito": "Se eu beber muita água, minha pele hidrata.",
+      "verdade": "A água chega por dentro e evapora por fora. Sem barreira que segure, ela sai — e a pele continua ressecada.",
+      "corpo": "Beber água é essencial pro corpo. Só não faz o trabalho do hidratante.\n\nA hidratação da pele depende da barreira que segura a água ali dentro. Se a barreira está danificada — sabonete errado, esfoliação demais, sol — a água evapora de qualquer jeito.\n\nBebe água E hidrata. Não é escolha."
     },
     {
       "id": 32,
       "pilar": "autocuidado",
-      "template": "capa",
-      "etiqueta": "recomeço",
+      "formato": "frase",
+      "etiqueta": "sem recomeçar",
       "gancho": "Você não precisa recomeçar do zero. Só continuar de onde parou.",
-      "corpo": "Parou a rotina por duas semanas? Não zerou nada.\n\nA gente tem essa mania de tudo ou nada: se falhei, então perdi tudo, então começo segunda.\n\nE aí a segunda vira mês que vem.\n\nSua pele não anota as faltas. Ela responde ao que você faz a partir de agora.\n\nPassou o creme hoje depois de duas semanas sem? Ótimo. Isso conta.\n\nConstância não é perfeição. É voltar mais rápido cada vez que sai da linha.\n\nComeça hoje à noite. Só o básico. Só isso já é continuar.",
-      "foto": "ref-03-closeup-oculos-boina.jpg"
+      "corpo": "Parou a rotina em maio? Não perdeu nada. Só continua.\n\nA pele não guarda rancor — ela responde ao que você faz a partir de hoje.\n\nPega o que já está na sua gaveta e usa hoje à noite. Esse é o recomeço inteiro."
     }
   ]
 }

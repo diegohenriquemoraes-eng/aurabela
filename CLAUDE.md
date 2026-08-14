@@ -31,17 +31,24 @@ do sofá.
 |---|---|
 | `config.py` | IDs da conta/app e leitura do token (nada de segredo no repo) |
 | `tipografia.py` | Playfair Display + Montserrat (variáveis) e a paleta |
-| `gerar_estatico.py` | Pillow → post 1080x1350 sobre a foto real dela |
-| `gerar_reels.py` | ffmpeg → Reels 1080x1920 com Ken Burns |
+| `arte.py` | Primitivas visuais: tons, fundo com grão, tracking, selo, ajuste de corpo |
+| `formatos.py` | Os 6 formatos do feed 1080x1350 (ver ESTRATEGIA-FEED.md) |
+| `curadoria.py` | **Quem entra hoje, em que formato e em que tom** — e o orçamento de rosto |
+| `foto.py` | Tratamento das fotos reais dela (letterbox, luz, recorte com foco) |
+| `gerar_reels.py` | ffmpeg → Reels 1080x1920; cenas de texto, produto ou retrato |
 | `gerar_story.py` | Story 1080x1920 com a arte emoldurada |
 | `legenda.py` | Ciclos de CTA e de pilar (com memória) + legenda com SEO |
 | `publicador.py` | Peças comuns: API, git, fila, estado |
 | `publicar_estatico.py` / `publicar_reels.py` | Os dois publicadores |
 | `renovar_token.py` | Renova o token de 60 dias (roda todo mês) |
-| `conteudos.json` | Banco de 32 posts estáticos |
-| `reels.json` | Banco de 12 roteiros de Reels |
+| `conteudos.json` | Banco de 32 posts estáticos (com formato por post) |
+| `reels.json` | Banco de 12 roteiros de Reels (cenas com tipo) |
+| `produtos.json` + `produtos/` | 48 packshots de skincare Mary Kay (catálogo VTEX da loja) |
 | `publicados.json` / `estado_ciclo.json` | O que saiu + memória dos ciclos |
-| `fotos/` | **Fotos reais em alta** da Marcia (ref-01 … ref-12) |
+| `fotos/` | **Fotos reais em alta** da Marcia (ref-01 … ref-12) — recurso ESCASSO |
+| `ferramentas/baixar_produtos.py` | Rebaixa o catálogo (local, não roda no Actions) |
+| `ferramentas/simular_feed.py` | Simula N dias e monta o mosaico do perfil, sem publicar |
+| `ferramentas/amostra_formatos.py` | Um exemplo de cada formato |
 
 ## As duas decisões de arquitetura que sustentam o projeto
 
@@ -57,9 +64,20 @@ decisão foi **não usar IA no caminho crítico**, por dois motivos:
 - **Rosto sintético destrói confiança.** Em skincare, o rosto *é* a prova. Um
   rosto "quase ela" cai no vale da estranheza justo onde a credibilidade mora.
 
-Então: **estático** = Pillow sobre a foto real; **Reels** = ffmpeg (Ken Burns)
-sobre as fotos reais. Tudo local, custo zero, sem cota. IA só entraria como
-enfeite opcional com fallback total para Pillow — nunca no rosto.
+Então: nada de IA no caminho crítico. Tudo local, custo zero, sem cota. IA só
+entraria como enfeite opcional com fallback total para Pillow — nunca no rosto.
+
+**Corolário descoberto em 14/08/2026, e é uma regra tão forte quanto a primeira:
+se o rosto é real, ele é FINITO.** São 10 fotos. O sistema original gastava foto
+dela em 100% das peças (1 por estático, **5 por Reels**) — 84 usos a cada duas
+semanas, cada foto voltando ao feed a cada dois dias. Isso queimava o banco e
+poluía a grade com a mesma cara.
+
+A correção está em `curadoria.py` + `formatos.py`: **1 peça com rosto a cada 6
+publicadas**, cooldown de 21 peças por foto, e cinco formatos que não dependem
+dela (frase, produto, ritual, mito, dado). Se o orçamento estourou, a peça é
+rebaixada para cartão de frase — nunca gasta foto. Detalhes e números em
+**`ESTRATEGIA-FEED.md`**; mexer em formato ou em peso de banco passa por lá.
 
 ### 2. API do Instagram com Instagram Login (e não a Graph API clássica)
 
@@ -153,9 +171,23 @@ não entra** (divide a mensagem de um perfil de venda).
   `_cortar_barras()` varre as bordas e corta antes de compor.
 - **Contraste sobre foto clara**: véu duplo no Reels (forte na base para o
   texto, leve no topo para o selo) e etiqueta em creme, não rosa — rosa sobre
-  roupa clara sumia.
-- **Texto ancorado de baixo para cima** no template `capa`: gancho longo
-  invadia o rodapé quando a âncora era pelo topo.
+  roupa clara sumia. No formato `retrato` o véu precisa estar **cheio já em 68%
+  da altura**, não só no rodapé: rampa lenta deixava o gancho sumir na blusa.
+- **Packshot: multiply, nunca recorte.** Recorte por flood fill come a tampa
+  branca do frasco (branco encostando em branco) e deixa a sombra do estúdio
+  como retângulo fantasma. Compor em multiply resolve os dois — mas exige fundo
+  **claro** e exige normalizar o fundo do packshot para 255 (a Mary Kay serve em
+  cinza 241, que em multiply vira um retângulo visível).
+- **Tarja "Melhor avaliado"** vem embutida no packshot de 4 produtos. É da
+  vitrine, não do produto — `_tirar_selo()` corta na origem.
+- **Capa de Reels com texto centralizado**: a grade do perfil (4:5 desde 2025)
+  mostra só o miolo do 9:16; gancho no rodapé aparecia cortado no meio da
+  palavra no perfil.
+- **Texto ancorado de baixo para cima** no `retrato`: gancho longo invadia o
+  rodapé quando a âncora era pelo topo.
+- **Medir para caber, não estimar por nº de caracteres** (`arte.caber`): escala
+  fixa por contagem estoura com palavra longa. E `evitar_orfao=True` onde o
+  texto é centrado, senão sobra uma palavra sozinha na última linha.
 - **Repositório público** é obrigatório: a API baixa a mídia por URL https
   pública (`raw.githubusercontent.com`) e não aceita upload de arquivo local —
   mesma razão do vendanaobra.
@@ -188,6 +220,10 @@ python publicar_estatico.py --ensaio    # gera a arte e mostra a legenda
 python publicar_reels.py --ensaio       # monta o mp4 e mostra a legenda
 python publicar_estatico.py --id 7      # conteúdo específico
 python renovar_token.py --checar        # confere se o token está vivo
+
+python ferramentas/simular_feed.py 14   # 14 dias de feed + mosaico, sem publicar
+python ferramentas/amostra_formatos.py  # um exemplo de cada formato
+python ferramentas/baixar_produtos.py   # rebaixa o catálogo Mary Kay (só local)
 ```
 
 ## Conteúdo
@@ -199,3 +235,7 @@ hora.
 
 Quando o banco ficar com ≤8 conteúdos (ou ≤4 roteiros), o publicador avisa no
 log e o workflow abre issue ao esgotar.
+
+**Atenção ao desequilíbrio dos bancos:** 32 estáticos (≈1 mês) contra 12
+roteiros de Reels (≈12 dias). O de Reels acaba primeiro — repor antes de
+26/08/2026.

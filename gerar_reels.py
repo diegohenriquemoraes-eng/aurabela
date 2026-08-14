@@ -22,15 +22,18 @@ import shutil
 import subprocess
 import tempfile
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageChops, ImageDraw
 
-from gerar_estatico import _tratar, _cobrir, _quebrar, _veu
+import arte as ar
+from arte import Tom
+from foto import tratar as _tratar, cobrir as _cobrir
 from tipografia import serif, sans, Cor
 
 LARG, ALT = 1080, 1920
 MARGEM = 84
 FPS = 30
 SELO = "@aurabelastore_on"
+BASE = os.path.dirname(os.path.abspath(__file__))
 
 # Area segura do Instagram: a UI cobre ~ topo 220px e base 420px no Reels.
 SEGURO_TOPO = 250
@@ -87,7 +90,7 @@ def _quadro(foto: str, texto: str, destino: str, etiqueta: str | None = None,
     n = len(texto)
     tam = 96 if n <= 40 else 82 if n <= 70 else 68 if n <= 105 else 56
     ft = serif(int(tam * escala), 800)
-    linhas = _quebrar(d, texto, ft, larg_txt)
+    linhas = ar.quebrar(d, texto, ft, larg_txt)
     lh_linha = int(ft.size * 1.16)
     y = y_base - len(linhas) * lh_linha
 
@@ -99,6 +102,97 @@ def _quadro(foto: str, texto: str, destino: str, etiqueta: str | None = None,
     for ln in linhas:
         d.text((m, y), ln, font=ft, fill=(255, 255, 255))
         y += lh_linha
+
+    os.makedirs(os.path.dirname(destino), exist_ok=True)
+    base.convert("RGB").save(destino, "PNG")
+    return destino
+
+
+def _quadro_texto(texto: str, destino: str, tom: dict, etiqueta: str | None = None,
+                  rodape: str | None = None, escala: float = 1.14,
+                  centralizar: bool = False) -> str:
+    """Cena tipografica — a que sustenta o Reels sem gastar foto do rosto dela.
+
+    Mesmo territorio visual do feed (fundo de `arte.py`, Playfair no gancho), so
+    que em 9:16 e respeitando a area segura da UI do Reels.
+
+    `centralizar` e para a CAPA: a grade do perfil mostra so o miolo do 9:16, e
+    gancho ancorado no rodape aparecia cortado no meio da palavra no perfil.
+    """
+    lw, lh = int(LARG * escala), int(ALT * escala)
+    base = ar.fundo(lw, lh, tom)
+    d = ImageDraw.Draw(base)
+    m = int(MARGEM * escala)
+    larg_txt = lw - 2 * m
+
+    d.text((m, int(SEGURO_TOPO * escala * 0.55)), SELO,
+           font=sans(int(32 * escala), 600), fill=tom["fraco"])
+
+    y_base = lh - int(SEGURO_BASE * escala)
+    if rodape:
+        ar.espacado(d, (m, y_base), rodape.upper(), sans(int(34 * escala), 700),
+                    tom["acento"], 3.0)
+        y_base -= int(64 * escala)
+
+    f = ar.caber(d, texto, larg_txt, int(720 * escala),
+                 [int(t * escala) for t in (96, 84, 72, 62, 54)])
+    h = ar.altura(d, texto, f, larg_txt, 1.16)
+    y = int(lh * 0.46 - h / 2) if centralizar else y_base - h
+    if etiqueta:
+        ar.espacado(d, (m, y - int(60 * escala)), etiqueta.upper(),
+                    sans(int(30 * escala), 700), tom["acento"], 4.6)
+    ar.bloco(d, texto, f, tom["texto"], m, y, larg_txt, 1.16)
+
+    os.makedirs(os.path.dirname(destino), exist_ok=True)
+    base.convert("RGB").save(destino, "PNG")
+    return destino
+
+
+def _quadro_produto(arquivo: str, texto: str, destino: str, tom: dict,
+                    etiqueta: str | None = None, rodape: str | None = None,
+                    escala: float = 1.14) -> str:
+    """Cena de produto: packshot em multiply (ver formatos.produto) + a frase."""
+    if not tom["claro"]:
+        tom = Tom.CREME
+    lw, lh = int(LARG * escala), int(ALT * escala)
+    base = ar.fundo(lw, lh, tom)
+
+    # A faixa livre vai do fim da area segura de cima ate onde o texto comeca;
+    # o frasco ocupa essa faixa e fica CENTRADO nela (antes encostava no topo e
+    # sobrava um buraco no meio do quadro).
+    topo_livre = int(SEGURO_TOPO * escala) + int(40 * escala)
+    base_livre = lh - int((SEGURO_BASE + 470) * escala)
+    faixa = max(int(400 * escala), base_livre - topo_livre)
+
+    caminho = arquivo if os.path.isabs(arquivo) else os.path.join(BASE, "produtos", arquivo)
+    pack = Image.open(caminho).convert("RGB")
+    e = min(faixa / pack.height, (lw - int(220 * escala)) / pack.width)
+    pack = pack.resize((max(1, round(pack.width * e)), max(1, round(pack.height * e))),
+                       Image.LANCZOS)
+    px = (lw - pack.width) // 2
+    py = topo_livre + max(0, (faixa - pack.height) // 2)
+    caixa = (px, py, px + pack.width, py + pack.height)
+    base.paste(ImageChops.multiply(base.crop(caixa), pack), caixa)
+
+    d = ImageDraw.Draw(base)
+    m = int(MARGEM * escala)
+    larg_txt = lw - 2 * m
+    d.text((m, int(SEGURO_TOPO * escala * 0.55)), SELO,
+           font=sans(int(32 * escala), 600), fill=tom["fraco"])
+
+    y_base = lh - int(SEGURO_BASE * escala)
+    if rodape:
+        ar.espacado(d, (m, y_base), rodape.upper(), sans(int(34 * escala), 700),
+                    tom["acento"], 3.0)
+        y_base -= int(64 * escala)
+
+    f = ar.caber(d, texto, larg_txt, int(400 * escala),
+                 [int(t * escala) for t in (78, 68, 58, 50)])
+    y = y_base - ar.altura(d, texto, f, larg_txt, 1.16)
+    if etiqueta:
+        ar.espacado(d, (m, y - int(60 * escala)), etiqueta.upper(),
+                    sans(int(30 * escala), 700), tom["acento"], 4.6)
+    ar.bloco(d, texto, f, tom["texto"], m, y, larg_txt, 1.16)
 
     os.makedirs(os.path.dirname(destino), exist_ok=True)
     base.convert("RGB").save(destino, "PNG")
@@ -126,7 +220,10 @@ def _zoompan(entrada: str, saida: str, dur: float, sentido: str) -> None:
 
 
 def gerar_reels(cenas: list[dict], destino: str, audio: str | None = None) -> str:
-    """cenas: [{foto, texto, etiqueta?, rodape?, dur?}]. Devolve o caminho do mp4.
+    """cenas: [{tipo, texto, ...}]. Devolve o caminho do mp4.
+
+    tipo = "texto" (padrao) | "produto" | "retrato". So o retrato usa foto da
+    Marcia — antes TODA cena usava, e um Reels queimava 5 fotos do banco de 10.
 
     O Instagram exige mp4/mov, H.264, AAC. Sempre embutimos uma faixa de audio
     (silenciosa se nao houver trilha) — Reels sem trilha de audio nenhuma pode
@@ -136,9 +233,20 @@ def gerar_reels(cenas: list[dict], destino: str, audio: str | None = None) -> st
     try:
         partes = []
         for i, c in enumerate(cenas):
-            png = _quadro(c["foto"], c["texto"], os.path.join(tmp, f"q{i}.png"),
-                          etiqueta=c.get("etiqueta"), rodape=c.get("rodape"),
-                          foco_y=c.get("foco_y", 0.32))
+            alvo = os.path.join(tmp, f"q{i}.png")
+            tom = Tom.por_nome(c.get("tom"))
+            tipo = c.get("tipo") or ("retrato" if c.get("foto") else "texto")
+            if tipo == "retrato" and c.get("foto"):
+                png = _quadro(c["foto"], c["texto"], alvo,
+                              etiqueta=c.get("etiqueta"), rodape=c.get("rodape"),
+                              foco_y=c.get("foco_y", 0.32))
+            elif tipo == "produto" and c.get("produto"):
+                png = _quadro_produto(c["produto"], c["texto"], alvo, tom,
+                                      etiqueta=c.get("etiqueta"), rodape=c.get("rodape"))
+            else:
+                png = _quadro_texto(c["texto"], alvo, tom,
+                                    etiqueta=c.get("etiqueta"), rodape=c.get("rodape"),
+                                    centralizar=(i == 0))
             mp4 = os.path.join(tmp, f"c{i}.mp4")
             _zoompan(png, mp4, c.get("dur", 3.2), "in" if i % 2 == 0 else "out")
             partes.append(mp4)

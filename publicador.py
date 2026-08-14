@@ -135,11 +135,19 @@ def ja_publicou_hoje(tipo: str) -> bool:
     return any(p["data"] == h and p.get("tipo") == tipo for p in registro()["posts"])
 
 
-def anotar(tipo: str, item_id: int, media_id: str, cta: str, pilar: str) -> None:
+def anotar(tipo: str, item_id: int, media_id: str, cta: str, pilar: str,
+           **extras) -> None:
+    """Registra a peca publicada.
+
+    Os extras (formato, tom, foto, produto, rosto) nao sao enfeite de log: sao a
+    memoria que a curadoria le para nao repetir formato, nao repetir tom e,
+    principalmente, para saber quando o rosto da Marcia pode voltar a aparecer.
+    """
     reg = registro()
     reg["posts"].append({
         "tipo": tipo, "id": item_id, "data": hoje(),
         "media_id": media_id, "cta": cta, "pilar": pilar,
+        **{k: v for k, v in extras.items() if v},
     })
     salvar(PUBLICADOS, reg)
 

@@ -1,0 +1,437 @@
+{
+  "_leia": "Catalogo de skincare Mary Kay baixado por ferramentas/baixar_produtos.py. As artes de produto leem daqui pelo campo 'arquivo' (packshot aparado em fundo branco, dentro de produtos/; a arte compoe em multiply).",
+  "produtos": [
+    {
+      "id": "217890",
+      "nome": "Creme Secativo para Pele com Tendência à Acne Clear Proof",
+      "nome_completo": "Creme Secativo para Pele com Tendência à Acne Clear Proof® 29g",
+      "linha": "Clear Proof",
+      "arquivo": "creme-secativo-para-pele-com-tendencia-a-acne-clear-proof.png",
+      "preco": 78.9,
+      "link": "https://loja.marykay.com.br/creme-secativo-para-pele-acneica-clear-proof-mary-kay/p"
+    },
+    {
+      "id": "217894",
+      "nome": "Gel de Limpeza para Pele com Tendência à Acne Clear Proof",
+      "nome_completo": "Gel de Limpeza para Pele com Tendência à Acne Clear Proof® 127g",
+      "linha": "Clear Proof",
+      "arquivo": "gel-de-limpeza-para-pele-com-tendencia-a-acne-clear-proof.png",
+      "preco": 75.9,
+      "link": "https://loja.marykay.com.br/gel-de-limpeza-para-pele-acneica-clear-proof-mary-kay/p"
+    },
+    {
+      "id": "217860",
+      "nome": "Hidratante sem Óleo para Pele com Tendência à Acne Clear Proof",
+      "nome_completo": "Hidratante sem Óleo para Pele com Tendência à Acne Clear Proof® 88ml",
+      "linha": "Clear Proof",
+      "arquivo": "hidratante-sem-oleo-para-pele-com-tendencia-a-acne-clear-pro.png",
+      "preco": 81.9,
+      "link": "https://loja.marykay.com.br/hidratante-para-pele-acneica-clear-proof-sem-oleo-mary-kay/p"
+    },
+    {
+      "id": "217680",
+      "nome": "Kit Antiacne Clear Proof",
+      "nome_completo": "Kit Antiacne Clear Proof®",
+      "linha": "Clear Proof",
+      "arquivo": "kit-antiacne-clear-proof.png",
+      "preco": 227.89,
+      "link": "https://loja.marykay.com.br/kit-antiacne-clear-proof-mary-kay/p"
+    },
+    {
+      "id": "217839",
+      "nome": "Máscara Detox Clear Proof",
+      "nome_completo": "Máscara Detox Clear Proof® 114g",
+      "linha": "Clear Proof",
+      "arquivo": "mascara-detox-clear-proof.png",
+      "preco": 92.9,
+      "link": "https://loja.marykay.com.br/mascara-detox-clear-proof-mary-kay/p"
+    },
+    {
+      "id": "217850",
+      "nome": "Tônico para Pele com Tendência à Acne Clear Proof",
+      "nome_completo": "Tônico para Pele com Tendência à Acne Clear Proof® 147ml",
+      "linha": "Clear Proof",
+      "arquivo": "tonico-para-pele-com-tendencia-a-acne-clear-proof.png",
+      "preco": 85.9,
+      "link": "https://loja.marykay.com.br/tonico-para-pele-acneica-clear-proof-mary-kay/p"
+    },
+    {
+      "id": "217733",
+      "nome": "Clinical Solutions Corretor de Tom Ácido Ferúlico + Niacinamida",
+      "nome_completo": "Mary Kay Clinical Solutions® Corretor de Tom Ácido Ferúlico + Niacinamida 15ml",
+      "linha": "Clinical Solutions",
+      "arquivo": "clinical-solutions-corretor-de-tom-acido-ferulico-niacinamid.png",
+      "preco": 157.9,
+      "link": "https://loja.marykay.com.br/corretor-de-tom-acido-ferulico-niacinamida-clinical-solutions-booster-mary-kay/p"
+    },
+    {
+      "id": "217698",
+      "nome": "Clinical Solutions Hidratante AH + Ceramida",
+      "nome_completo": "Mary Kay Clinical Solutions® Hidratante AH + Ceramida 15ml",
+      "linha": "Clinical Solutions",
+      "arquivo": "clinical-solutions-hidratante-ah-ceramida.png",
+      "preco": 157.9,
+      "link": "https://loja.marykay.com.br/hidratante-ah-ceramida-clinical-solutions-booster-mary-kay/p"
+    },
+    {
+      "id": "217732",
+      "nome": "Clinical Solutions Peeling PHA + AHA",
+      "nome_completo": "Mary Kay Clinical Solutions® Peeling PHA + AHA 15ml",
+      "linha": "Clinical Solutions",
+      "arquivo": "clinical-solutions-peeling-pha-aha.png",
+      "preco": 157.9,
+      "link": "https://loja.marykay.com.br/peeling-pha-aha-clinical-solutions-booster-mary-kay/p"
+    },
+    {
+      "id": "217734",
+      "nome": "Clinical Solutions Redutor de Linha C + Resveratrol",
+      "nome_completo": "Mary Kay Clinical Solutions® Redutor de Linha C + Resveratrol 15ml",
+      "linha": "Clinical Solutions",
+      "arquivo": "clinical-solutions-redutor-de-linha-c-resveratrol.png",
+      "preco": 157.9,
+      "link": "https://loja.marykay.com.br/redutor-de-linha-c-resveratro-clinical-solutions-booster-mary-kay/p"
+    },
+    {
+      "id": "218218",
+      "nome": "Clinical Solutions Retinol 0,3",
+      "nome_completo": "Mary Kay Clinical Solutions Retinol 0,3",
+      "linha": "Clinical Solutions",
+      "arquivo": "clinical-solutions-retinol-0-3.png",
+      "preco": 299.9,
+      "link": "https://loja.marykay.com.br/clinical-solutions-retinol-serum-facial/p"
+    },
+    {
+      "id": "217653",
+      "nome": "Kit Microdermoabrasão TimeWise",
+      "nome_completo": "Kit Microdermoabrasão TimeWise®",
+      "linha": "Kits",
+      "arquivo": "kit-microdermoabrasao-timewise.png",
+      "preco": 203.46,
+      "link": "https://loja.marykay.com.br/kit-combate-as-linhas-de-expressao-peeling-de-cristal-microdermoabrasao-/p"
+    },
+    {
+      "id": "218142",
+      "nome": "Creme Para Barbear e Pós Barba 2 em 1 MKMen",
+      "nome_completo": "Creme Para Barbear e Pós Barba 2 em 1 MKMen®, 127gr",
+      "linha": "MKMen",
+      "arquivo": "creme-para-barbear-e-pos-barba-2-em-1-mkmen.png",
+      "preco": 64.9,
+      "link": "https://loja.marykay.com.br/mary-kay-creme-de-barbear-hidratante-mk-men/p"
+    },
+    {
+      "id": "218140",
+      "nome": "Gel de Limpeza Facial MK Men",
+      "nome_completo": "Gel de Limpeza Facial MK Men®, 133gr",
+      "linha": "MKMen",
+      "arquivo": "gel-de-limpeza-facial-mk-men.png",
+      "preco": 59.9,
+      "link": "https://loja.marykay.com.br/gel-de-limpeza-facial-mkmen-novo/p"
+    },
+    {
+      "id": "218141",
+      "nome": "Hidratante Antioxidante MK Men",
+      "nome_completo": "Hidratante Antioxidante MK Men®, 88gr",
+      "linha": "MKMen",
+      "arquivo": "hidratante-antioxidante-mk-men.png",
+      "preco": 99.9,
+      "link": "https://loja.marykay.com.br/novo-hidratante-antioxidante-mkmen-marykay/p"
+    },
+    {
+      "id": "218020",
+      "nome": "Esfoliante Facial",
+      "nome_completo": "Esfoliante Facial Mary Kay®  85g",
+      "linha": "Mary Kay",
+      "arquivo": "esfoliante-facial.png",
+      "preco": 41.5,
+      "link": "https://loja.marykay.com.br/esfoliante-facial-mary-kay/p"
+    },
+    {
+      "id": "218019",
+      "nome": "Gel de Limpeza Facial Matificante - Mista/Oleosa",
+      "nome_completo": "Gel de Limpeza Facial Matificante Mary Kay® - Mista/Oleosa, 127g",
+      "linha": "Mary Kay",
+      "arquivo": "gel-de-limpeza-facial-matificante-mista-oleosa.png",
+      "preco": 37.5,
+      "link": "https://loja.marykay.com.br/gel-de-limpeza-facial-matificante-mary-kay/p"
+    },
+    {
+      "id": "218022",
+      "nome": "Hidratante Facial Matificante - Mista/Oleosa",
+      "nome_completo": "Hidratante Facial Matificante Mary Kay® - Mista/Oleosa 85g",
+      "linha": "Mary Kay",
+      "arquivo": "hidratante-facial-matificante-mista-oleosa.png",
+      "preco": 45.5,
+      "link": "https://loja.marykay.com.br/hidratante-facial-matificante-mary-kay/p"
+    },
+    {
+      "id": "217932",
+      "nome": "Lenços de Papel Antibrilho da Pele",
+      "nome_completo": "Lenços de Papel Antibrilho da Pele Mary Kay®",
+      "linha": "Mary Kay",
+      "arquivo": "lencos-de-papel-antibrilho-da-pele.png",
+      "preco": 36.9,
+      "link": "https://loja.marykay.com.br/lencos-de-papel-antibrilho-da-pele-mary-kay/p"
+    },
+    {
+      "id": "218159",
+      "nome": "Loção Facial Restauradora de Barreira 1:1:3",
+      "nome_completo": "Loção Facial Restauradora de Barreira 1:1:3, 29ml",
+      "linha": "Mary Kay",
+      "arquivo": "locao-facial-restauradora-de-barreira-1-1-3.png",
+      "preco": 259.9,
+      "link": "https://loja.marykay.com.br/local-facial-restauradora-de-barreira/p"
+    },
+    {
+      "id": "218153",
+      "nome": "Protetor Solar FPS 50",
+      "nome_completo": "Mary Kay® Protetor Solar FPS 50",
+      "linha": "Mary Kay",
+      "arquivo": "protetor-solar-fps-50.png",
+      "preco": 71.9,
+      "link": "https://loja.marykay.com.br/mary-kay-protetor-solar-fps-50/p"
+    },
+    {
+      "id": "218061",
+      "nome": "Sistema Facial",
+      "nome_completo": "Sistema Facial Mary Kay",
+      "linha": "Mary Kay",
+      "arquivo": "sistema-facial.png",
+      "preco": 128.5,
+      "link": "https://loja.marykay.com.br/kit-pele-matte-mary-kay-cuidados-faciais-2/p"
+    },
+    {
+      "id": "218021",
+      "nome": "Tônico Facial",
+      "nome_completo": "Tônico Facial Mary Kay® 147ml",
+      "linha": "Mary Kay",
+      "arquivo": "tonico-facial.png",
+      "preco": 45.5,
+      "link": "https://loja.marykay.com.br/tonico-facial-mary-kay-2/p"
+    },
+    {
+      "id": "217742",
+      "nome": "Água Micelar",
+      "nome_completo": "Água Micelar Mary Kay® 147ml",
+      "linha": "Mary Kay",
+      "arquivo": "agua-micelar.png",
+      "preco": 58.9,
+      "link": "https://loja.marykay.com.br/agua-micelar-mary-kay/p"
+    },
+    {
+      "id": "218127",
+      "nome": "Óleo Nutritivo",
+      "nome_completo": "Óleo Nutritivo Mary Kay®, 29ml",
+      "linha": "Mary Kay",
+      "arquivo": "oleo-nutritivo.png",
+      "preco": 143.9,
+      "link": "https://loja.marykay.com.br/oleo-nutritivo-mary-kay-29ml/p"
+    },
+    {
+      "id": "217867",
+      "nome": "Bálsamo para os Lábios Satin Lips Karité Aroma de Chá Branco & Citrus",
+      "nome_completo": "Bálsamo para os Lábios Satin Lips® Karité Aroma de Chá Branco & Citrus 8g",
+      "linha": "Satin Lips",
+      "arquivo": "balsamo-para-os-labios-satin-lips-karite-aroma-de-cha-branco.png",
+      "preco": 51.9,
+      "link": "https://loja.marykay.com.br/balsamo-para-os-labios-karite-aroma-de-cha-branco-e-citrus-mary-kay/p"
+    },
+    {
+      "id": "217767",
+      "nome": "Esfoliante para os Lábios Satin Lips Karité Aroma de Chá Branco & Citrus",
+      "nome_completo": "Esfoliante para os Lábios Satin Lips® Karité Aroma de Chá Branco & Citrus 8g",
+      "linha": "Satin Lips",
+      "arquivo": "esfoliante-para-os-labios-satin-lips-karite-aroma-de-cha-bra.png",
+      "preco": 45.9,
+      "link": "https://loja.marykay.com.br/esfoliante-labial-karite-com-aroma-de-cha-branco-e-citrus-mary-kay/p"
+    },
+    {
+      "id": "217927",
+      "nome": "Kit Lábios de Seda Karité aroma de Chá Branco & Citrus",
+      "nome_completo": "Kit Lábios de Seda Karité aroma de Chá Branco & Citrus®",
+      "linha": "Satin Lips",
+      "arquivo": "kit-labios-de-seda-karite-aroma-de-cha-branco-citrus.png",
+      "preco": 87.9,
+      "link": "https://loja.marykay.com.br/kit-labios-de-seda-karite-aroma-cha-branco-e-citrus/p"
+    },
+    {
+      "id": "217916",
+      "nome": "Creme para Área dos Olhos TimeWise",
+      "nome_completo": "Creme para Área dos Olhos TimeWise® 14g",
+      "linha": "TimeWise",
+      "arquivo": "creme-para-area-dos-olhos-timewise.png",
+      "preco": 83.9,
+      "link": "https://loja.marykay.com.br/creme-para-area-dos-olhos-timewise/p"
+    },
+    {
+      "id": "217929",
+      "nome": "Gel de Limpeza 4 em 1 TimeWise",
+      "nome_completo": "Gel de Limpeza 4 em 1 TimeWise® 127g",
+      "linha": "TimeWise",
+      "arquivo": "gel-de-limpeza-4-em-1-timewise.png",
+      "preco": 78.9,
+      "link": "https://loja.marykay.com.br/gel-de-limpeza-4-em-1-timewise/p"
+    },
+    {
+      "id": "217912",
+      "nome": "Gel de Recuperação Noturna TimeWise",
+      "nome_completo": "Gel de Recuperação Noturna TimeWise® 29g",
+      "linha": "TimeWise",
+      "arquivo": "gel-de-recuperacao-noturna-timewise.png",
+      "preco": 133.9,
+      "link": "https://loja.marykay.com.br/gel-de-recuperacao-noturna-timewise/p"
+    },
+    {
+      "id": "217914",
+      "nome": "Hidratante Antioxidante TimeWise",
+      "nome_completo": "Hidratante Antioxidante TimeWise® 85g",
+      "linha": "TimeWise",
+      "arquivo": "hidratante-antioxidante-timewise.png",
+      "preco": 106.9,
+      "link": "https://loja.marykay.com.br/hidrantante-antioxidante-timewise-normal-seca/p"
+    },
+    {
+      "id": "217917",
+      "nome": "Kit Básico TimeWise",
+      "nome_completo": "Kit Básico TimeWise®",
+      "linha": "TimeWise",
+      "arquivo": "kit-basico-timewise.png",
+      "preco": 185.8,
+      "link": "https://loja.marykay.com.br/kit-basico-timewise-mista-oleosa/p"
+    },
+    {
+      "id": "217921",
+      "nome": "Kit Dia + Noite TimeWise",
+      "nome_completo": "Kit Dia + Noite TimeWise®",
+      "linha": "TimeWise",
+      "arquivo": "kit-dia-noite-timewise.png",
+      "preco": 216.8,
+      "link": "https://loja.marykay.com.br/kit-dia-noite-timewise/p"
+    },
+    {
+      "id": "217913",
+      "nome": "Loção Diurna FPS 30 TimeWise",
+      "nome_completo": "Loção Diurna FPS 30 TimeWise® 29g",
+      "linha": "TimeWise",
+      "arquivo": "locao-diurna-fps-30-timewise.png",
+      "preco": 82.9,
+      "link": "https://loja.marykay.com.br/locao-diurna-fps-30-timewise/p"
+    },
+    {
+      "id": "217640",
+      "nome": "Microdermoabrasão TimeWise Passo 1: Refinar",
+      "nome_completo": "Microdermoabrasão TimeWise® Passo 1: Refinar 70g",
+      "linha": "TimeWise",
+      "arquivo": "microdermoabrasao-timewise-passo-1-refinar.png",
+      "preco": 125.9,
+      "link": "https://loja.marykay.com.br/esfoliante-facial-de-microdermoabrasaao-timewise-passo-1---refinar/p"
+    },
+    {
+      "id": "217641",
+      "nome": "Microdermoabrasão TimeWise Passo 2: Restaurar",
+      "nome_completo": "Microdermoabrasão TimeWise® Passo 2: Restaurar 29ml",
+      "linha": "TimeWise",
+      "arquivo": "microdermoabrasao-timewise-passo-2-restaurar.png",
+      "preco": 115.9,
+      "link": "https://loja.marykay.com.br/serum-facial-microdermoabrasao-timewise-passo-2---restaurar-mary-kay/p"
+    },
+    {
+      "id": "217922",
+      "nome": "Sistema Avançado TimeWise",
+      "nome_completo": "Sistema Avançado TimeWise®",
+      "linha": "TimeWise",
+      "arquivo": "sistema-avancado-timewise.png",
+      "preco": 427.88,
+      "link": "https://loja.marykay.com.br/sistema-avancado-timewise-normal-seca/p"
+    },
+    {
+      "id": "217924",
+      "nome": "Sistema Completo TimeWise",
+      "nome_completo": "Sistema Completo TimeWise®",
+      "linha": "TimeWise",
+      "arquivo": "sistema-completo-timewise.png",
+      "preco": 365.88,
+      "link": "https://loja.marykay.com.br/sistema-completo-timewise-normal-seca/p"
+    },
+    {
+      "id": "217737",
+      "nome": "Sérum Facial Renovador C + E TimeWise",
+      "nome_completo": "Sérum Facial Renovador C + E TimeWise® 44ml",
+      "linha": "TimeWise",
+      "arquivo": "serum-facial-renovador-c-e-timewise.png",
+      "preco": 176.9,
+      "link": "https://loja.marykay.com.br/serum-facial-renovador-vitamina-c-e-e-mary-kay/p"
+    },
+    {
+      "id": "217752",
+      "nome": "Tônico Suavizante Hidratante TimeWise",
+      "nome_completo": "Tônico Suavizante Hidratante TimeWise® 147ml",
+      "linha": "TimeWise",
+      "arquivo": "tonico-suavizante-hidratante-timewise.png",
+      "preco": 99.9,
+      "link": "https://loja.marykay.com.br/tonico-suavizante-hidratante-timewise-mary-kay/p"
+    },
+    {
+      "id": "217763",
+      "nome": "Creme Diurno com FPS 30 Volu-Firm TimeWise Repair",
+      "nome_completo": "Creme Diurno com FPS 30 Volu-Firm TimeWise Repair® 48g",
+      "linha": "TimeWise Repair",
+      "arquivo": "creme-diurno-com-fps-30-volu-firm-timewise-repair.png",
+      "preco": 259.9,
+      "link": "https://loja.marykay.com.br/creme-diurno-volu-firm-timewise-repair-fps-30-may-kay/p"
+    },
+    {
+      "id": "217872",
+      "nome": "Creme Noturno Volu-Firm TimeWise Repair",
+      "nome_completo": "Creme Noturno Volu-Firm TimeWise Repair® 48g",
+      "linha": "TimeWise Repair",
+      "arquivo": "creme-noturno-volu-firm-timewise-repair.png",
+      "preco": 259.9,
+      "link": "https://loja.marykay.com.br/hidratante-noturno-timewise-repair-volu-firm-mary-kay-pele-madura/p"
+    },
+    {
+      "id": "217931",
+      "nome": "Creme para a Área dos Olhos Volu-Firm TimeWise Repair",
+      "nome_completo": "Creme para a Área dos Olhos Volu-Firm™ TimeWise Repair™ 14g",
+      "linha": "TimeWise Repair",
+      "arquivo": "creme-para-a-area-dos-olhos-volu-firm-timewise-repair.png",
+      "preco": 165.9,
+      "link": "https://loja.marykay.com.br/creme-para-a-area-dos-olhos-volufirm-timewise-repair/p"
+    },
+    {
+      "id": "217907",
+      "nome": "Espuma de Limpeza Volu-Firm TimeWise Repair",
+      "nome_completo": "Espuma de Limpeza Volu-Firm™ TimeWise Repair™ 127g",
+      "linha": "TimeWise Repair",
+      "arquivo": "espuma-de-limpeza-volu-firm-timewise-repair.png",
+      "preco": 115.9,
+      "link": "https://loja.marykay.com.br/limpeza-facial-para-pele-madura-timewise-repair-mary-kay/p"
+    },
+    {
+      "id": "217842",
+      "nome": "Peeling Facial Renovador em Gel TimeWise Repair",
+      "nome_completo": "Peeling Facial Renovador em Gel TimeWise Repair® 48g",
+      "linha": "TimeWise Repair",
+      "arquivo": "peeling-facial-renovador-em-gel-timewise-repair.png",
+      "preco": 265.9,
+      "link": "https://loja.marykay.com.br/peeling-facial-renovador-timewise-repair-em-gel-pele-madura/p"
+    },
+    {
+      "id": "217874",
+      "nome": "Preenchedor de Rugas Volu-Fill TimeWise Repair",
+      "nome_completo": "Preenchedor de Rugas Volu-Fill TimeWise Repair® 14g",
+      "linha": "TimeWise Repair",
+      "arquivo": "preenchedor-de-rugas-volu-fill-timewise-repair.png",
+      "preco": 149.9,
+      "link": "https://loja.marykay.com.br/preenchedor-de-rugas-timewise-repair-volu-fill-mary-kay-pele-madura/p"
+    },
+    {
+      "id": "217771",
+      "nome": "Sérum Lifiting Avançado Volu-Firm TimeWise Repair",
+      "nome_completo": "Sérum Lifiting Avançado Volu-Firm TimeWise Repair® 29ml",
+      "linha": "TimeWise Repair",
+      "arquivo": "serum-lifiting-avancado-volu-firm-timewise-repair.png",
+      "preco": 229.9,
+      "link": "https://loja.marykay.com.br/serum-lifiting-volu-firm-timewise-repair-mary-kay-pele-madura/p"
+    }
+  ]
+}

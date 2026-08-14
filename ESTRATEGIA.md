@@ -1,5 +1,12 @@
 # AuraBela — Estratégia de crescimento orgânico no Instagram
 
+> **Parte visual DESATUALIZADA desde 14/08/2026.** As seções 7 (imagem/vídeo) e
+> 11 (estrutura) descrevem o sistema antigo, em que **toda peça usava foto do
+> rosto da Marcia** — o que queimava o banco de 10 fotos em semanas. O sistema
+> de formatos, o orçamento de rosto e a leitura da grade estão em
+> **`ESTRATEGIA-FEED.md`**. Pilares, CTA, SEO, bio e cadência (seções 1–6, 8–10)
+> continuam valendo.
+
 Projeto de conteúdo automático para **@aurabelastore_on** (Marcia Lima), revenda
 de skincare/cosméticos Mary Kay. Pesquisa e planejamento feitos em 12/08/2026.
 Projeto **totalmente separado** do posts-vendanaobra — mesmo caminho técnico

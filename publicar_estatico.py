@@ -3,10 +3,11 @@
 
 Fluxo:
   1. CTA e pilar do dia (ciclos com memoria em estado_ciclo.json)
-  2. escolhe o conteudo que casa com o pilar (conteudos.json menos publicados)
-  3. gera a arte sobre a FOTO REAL dela
+  2. a CURADORIA escolhe o conteudo, o formato, o tom e — se for o caso — qual
+     foto ou qual produto entra (ver curadoria.py: rosto e recurso escasso)
+  3. gera a arte no formato escolhido
   4. commita/sobe a imagem (a API exige URL https publica)
-  5. publica, registra e grava o estado
+  5. publica, registra (com formato/tom/foto/produto) e grava o estado
   6. story de reforco
 
 Uso:
@@ -21,46 +22,43 @@ import argparse
 import os
 
 import config
+import curadoria
+import formatos
 import legenda
 import publicador as pb
-from gerar_estatico import capa, editorial
 
 BASE = pb.BASE
 CONTEUDOS = os.path.join(BASE, "conteudos.json")
+PRODUTOS = os.path.join(BASE, "produtos.json")
 TIPO = "estatico"
 
-
-def escolher(banco: list[dict], id_forcado: int | None, pilar: str) -> dict:
-    if id_forcado is not None:
-        for c in banco:
-            if c["id"] == id_forcado:
-                return c
-        raise SystemExit(f"Conteudo id={id_forcado} nao existe")
-
-    restantes = pb.fila(banco, TIPO)
-    if not restantes:
-        raise SystemExit("Banco de conteudos esgotado — repor conteudos.json.")
-    if len(restantes) <= 8:
-        pb.log(f"AVISO: so restam {len(restantes)} conteudos no banco.")
-
-    # O pilar do dia manda: puxa para a frente o proximo conteudo daquele pilar.
-    # Se nao houver, segue a fila (melhor publicar fora do pilar do que nao
-    # publicar — a constancia vale mais que a ordem perfeita).
-    for c in restantes:
-        if c.get("pilar") == pilar:
-            return c
-    pb.log(f"pilar {pilar}: nenhum conteudo casa, seguindo a fila")
-    return restantes[0]
+FORMATOS = ("frase", "produto", "ritual", "mito", "dado", "retrato")
 
 
-def gerar_arte(c: dict, cta: str, destino: str) -> str:
-    foto = os.path.join(BASE, "fotos", c["foto"])
-    rodape = legenda.rodape_do_cta(cta)
-    comum = dict(etiqueta=c.get("etiqueta", ""), rodape=rodape,
-                 foco_y=c.get("foco_y", 0.32))
-    if c.get("template") == "editorial":
-        return editorial(foto, c["gancho"], destino, **comum)
-    return capa(foto, c["gancho"], destino, **comum)
+def gerar_arte(c: dict, formato: str, tom: dict, rodape: str, destino: str,
+               foto: str | None, prod: dict | None) -> str:
+    """Despacha para o formato. Um lugar so — quem cria formato novo mexe aqui."""
+    etiqueta = c.get("etiqueta")
+
+    if formato == "ritual":
+        return formatos.ritual(c["gancho"], c["passos"], destino, tom,
+                               etiqueta=etiqueta or "rotina", rodape=rodape)
+    if formato == "mito":
+        return formatos.mito(c["mito"], c["verdade"], destino, rodape=rodape)
+    if formato == "dado":
+        return formatos.dado(c["numero"], c["frase"], destino, tom,
+                             etiqueta=etiqueta, rodape=rodape)
+    if formato == "produto" and prod:
+        return formatos.produto(prod["arquivo"], prod["nome"], destino,
+                                beneficio=c.get("beneficio"), linha=prod.get("linha"),
+                                tom=tom, rodape=rodape)
+    if formato == "retrato" and foto:
+        return formatos.retrato(os.path.join(BASE, "fotos", foto), c["gancho"],
+                                destino, etiqueta=etiqueta, rodape=rodape,
+                                foco_y=c.get("foco_y", 0.32))
+    # frase e tambem o plano B de qualquer formato sem o insumo que ele pede
+    return formatos.frase(c["gancho"], destino, tom, etiqueta=etiqueta,
+                          rodape=rodape, assinatura=c.get("assinatura"))
 
 
 def main() -> None:
@@ -80,15 +78,42 @@ def main() -> None:
     i_pilar, pilar = legenda.pilar_do_dia(estado)
 
     banco = pb.carregar(CONTEUDOS, {"posts": []})["posts"]
-    c = escolher(banco, a.id, pilar)
+    publicados = pb.registro()
+
+    if a.id is not None:
+        c = next((x for x in banco if x["id"] == a.id), None)
+        if not c:
+            raise SystemExit(f"Conteudo id={a.id} nao existe")
+    else:
+        restantes = pb.fila(banco, TIPO)
+        if len(restantes) <= 8:
+            pb.log(f"AVISO: so restam {len(restantes)} conteudos no banco.")
+        c = curadoria.escolher_conteudo(restantes, publicados, pilar)
+
+    formato = curadoria.formato_efetivo(c, publicados)
+    if formato != c.get("formato"):
+        pb.log(f"orcamento de rosto esgotado: {c.get('formato')} -> {formato}")
+    tom = curadoria.escolher_tom(c, publicados, formato)
+
+    foto = prod = None
+    if formato == "retrato":
+        fotos = sorted(os.listdir(os.path.join(BASE, "fotos")))
+        foto = curadoria.escolher_foto(fotos, publicados, c.get("foto"))
+    if formato == "produto":
+        catalogo = pb.carregar(PRODUTOS, {"produtos": []})["produtos"]
+        prod = curadoria.escolher_produto(catalogo, publicados, c.get("produto"))
 
     hoje = pb.hoje()
     slug = f"{hoje}-est{c['id']:03d}"
     destino = os.path.join(BASE, "imagens", hoje, f"{slug}.jpg")
-    arte = gerar_arte(c, cta, destino)
-    pb.log(f"arte: {os.path.basename(arte)} | pilar {pilar} | CTA {cta}")
+    rodape = legenda.rodape_do_cta(cta)
+    arte = gerar_arte(c, formato, tom, rodape, destino, foto, prod)
+    pb.log(f"arte: {os.path.basename(arte)} | {formato}/{tom['nome']} | "
+           f"pilar {pilar} | CTA {cta}"
+           + (f" | foto {foto}" if foto else "")
+           + (f" | produto {prod['nome']}" if prod else ""))
 
-    promocao = pb.carregar(pb.ESTADO, {}).get("promocao") or None
+    promocao = estado.get("promocao") or None
     texto = legenda.montar(c, cta, promocao)
 
     if a.ensaio:
@@ -105,8 +130,7 @@ def main() -> None:
     import time
     time.sleep(5)  # folga para o CDN do raw responder
 
-    media_id = pb.publicar_container(
-        {"image_url": url, "caption": texto}, tok)
+    media_id = pb.publicar_container({"image_url": url, "caption": texto}, tok)
 
     # story de reforco: se falhar, o feed ja esta no ar — avisa e segue
     try:
@@ -120,7 +144,9 @@ def main() -> None:
     except SystemExit as e:
         pb.log(f"AVISO: story falhou ({e}); o post do feed esta no ar")
 
-    pb.anotar(TIPO, c["id"], media_id, cta, pilar)
+    pb.anotar(TIPO, c["id"], media_id, cta, pilar, formato=formato,
+              tom=tom["nome"], foto=foto, produto=prod["arquivo"] if prod else None,
+              rosto=(formato == "retrato"))
     estado = pb.carregar(pb.ESTADO, {})
     estado.update({"cta_indice": i_cta, "cta": cta,
                    "pilar_indice": i_pilar, "pilar": pilar, "data": hoje})
