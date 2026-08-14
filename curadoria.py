@@ -53,7 +53,21 @@ def _usados(publicados: dict, campo: str, n: int) -> set:
 
 
 # ------------------------------------------------------------------ conteudo
-def escolher_conteudo(fila: list[dict], publicados: dict, pilar: str) -> dict:
+def dia_de_carrossel(publicados: dict) -> bool:
+    """O slot das 19h alterna carrossel e imagem unica.
+
+    Carrossel e o formato de maior salvamento (2-3x o Reels) e salvamento e o
+    sinal que mais pesa no ranqueamento — entao ele seria o padrao. Alternar, e
+    nao usar sempre, tem duas razoes: variedade na grade do perfil e banco (nem
+    todo conteudo rende sete slides sem encher linguica, e carrossel ruim
+    derruba a taxa de conclusao, que e justamente o que o formato mede).
+    """
+    do_slot = [p for p in publicados.get("posts", []) if p.get("tipo") == "estatico"]
+    return not (do_slot and do_slot[-1].get("formato") == "carrossel")
+
+
+def escolher_conteudo(fila: list[dict], publicados: dict, pilar: str,
+                      preferir_carrossel: bool = False) -> dict:
     """Proximo conteudo: casa com o pilar do dia e respeita o orcamento de rosto.
 
     Ordem de preferencia:
@@ -75,6 +89,16 @@ def escolher_conteudo(fila: list[dict], publicados: dict, pilar: str) -> dict:
         return rosto_ok or c.get("formato") != "retrato"
 
     do_pilar = [c for c in fila if c.get("pilar") == pilar]
+
+    # Dia de carrossel: quem tem `slides` passa na frente, primeiro dentro do
+    # pilar do dia e depois em qualquer pilar. Se nao houver nenhum, o dia cai
+    # para imagem unica sem drama — constancia acima de formato.
+    if preferir_carrossel:
+        for lote in (do_pilar, fila):
+            com_slides = [c for c in lote if c.get("slides") and permitido(c)]
+            if com_slides:
+                return com_slides[0]
+
     for lote in (do_pilar, fila):
         folgados = [c for c in lote
                     if permitido(c) and c.get("formato") not in formatos_travados]

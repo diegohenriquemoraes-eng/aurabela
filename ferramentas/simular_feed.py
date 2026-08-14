@@ -94,20 +94,37 @@ def main() -> None:
                             "formato": "reels", "foto": foto, "rosto": bool(foto),
                             "tom": tom_capa}
             else:
+                import carrossel
+                import publicar_estatico as pe
+
+                quer = curadoria.dia_de_carrossel(publicados)
                 fila = [c for c in posts if c["id"] not in usados] or posts
-                c = curadoria.escolher_conteudo(fila, publicados, pilar)
-                formato = curadoria.formato_efetivo(c, publicados)
+                c = curadoria.escolher_conteudo(fila, publicados, pilar,
+                                                preferir_carrossel=quer)
+                eh_carrossel = bool(quer and c.get("slides"))
+                formato = ("carrossel" if eh_carrossel
+                           else curadoria.formato_efetivo(c, publicados))
                 tom = curadoria.escolher_tom(c, publicados, formato)
                 foto = prod = None
-                if formato == "retrato":
-                    fotos = sorted(os.listdir(os.path.join(BASE, "fotos")))
-                    foto = curadoria.escolher_foto(fotos, publicados, c.get("foto"))
-                if formato == "produto":
-                    prod = curadoria.escolher_produto(catalogo, publicados,
-                                                      c.get("produto"))
-                import publicar_estatico as pe
-                pe.gerar_arte(c, formato, tom, legenda.rodape_do_cta(cta), alvo,
-                              foto, prod)
+
+                if eh_carrossel:
+                    # so a CAPA entra no mosaico — e ela que ocupa a grade
+                    pecas = carrossel.montar(c, tom, legenda.rodape_do_cta(cta),
+                                             os.path.dirname(alvo),
+                                             f"{n:03d}-carrossel")
+                    os.replace(pecas[0], alvo)
+                    for extra in pecas[1:]:
+                        os.remove(extra)
+                else:
+                    if formato == "retrato":
+                        fotos = sorted(os.listdir(os.path.join(BASE, "fotos")))
+                        foto = curadoria.escolher_foto(fotos, publicados, c.get("foto"))
+                    if formato == "produto":
+                        prod = curadoria.escolher_produto(catalogo, publicados,
+                                                          c.get("produto"))
+                    pe.gerar_arte(c, formato, tom, legenda.rodape_do_cta(cta), alvo,
+                                  foto, prod)
+
                 registro = {"tipo": tipo, "id": c["id"], "pilar": pilar,
                             "formato": formato, "tom": tom["nome"], "foto": foto,
                             "produto": prod["arquivo"] if prod else None,

@@ -96,6 +96,40 @@ def publicar_container(criacao: dict, tok: str) -> str:
     return post["id"]
 
 
+def publicar_carrossel(urls: list[str], legenda_txt: str, tok: str) -> str:
+    """Publica carrossel: um container FILHO por imagem + um container pai.
+
+    A API exige 2 a 10 itens. Cada filho nasce com `is_carousel_item=true` e
+    NAO leva legenda (quem leva e o pai); depois o pai recebe
+    `media_type=CAROUSEL` e a lista de ids em `children`.
+
+    Cada filho tem de terminar em FINISHED antes de entrar no pai — publicar com
+    um filho ainda baixando devolve erro 100 de validacao, que e generico e nao
+    diz qual item falhou.
+    """
+    if not 2 <= len(urls) <= 10:
+        raise SystemExit(f"carrossel precisa de 2 a 10 itens (recebeu {len(urls)})")
+
+    filhos = []
+    for i, url in enumerate(urls, 1):
+        cid = _post(f"{config.IG_USER_ID}/media",
+                    {"image_url": url, "is_carousel_item": "true",
+                     "access_token": tok})["id"]
+        esperar(cid, tok, tentativas=30)
+        log(f"slide {i}/{len(urls)} pronto ({cid})")
+        filhos.append(cid)
+
+    pai = _post(f"{config.IG_USER_ID}/media",
+                {"media_type": "CAROUSEL", "children": ",".join(filhos),
+                 "caption": legenda_txt, "access_token": tok})["id"]
+    log(f"container do carrossel {pai}")
+    esperar(pai, tok)
+    post = _post(f"{config.IG_USER_ID}/media_publish",
+                 {"creation_id": pai, "access_token": tok})
+    log(f"PUBLICADO: {post['id']}")
+    return post["id"]
+
+
 # ------------------------------------------------------------------ git
 def git(*args: str) -> None:
     subprocess.run(["git", *args], cwd=BASE, check=True)

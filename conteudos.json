@@ -14,7 +14,51 @@
         "Hidratante — sela tudo o que veio antes",
         "Protetor — de manhã, sempre, mesmo em casa"
       ],
-      "corpo": "Quase todo mundo erra o passo 3.\n\nA regra é simples: do mais líquido para o mais denso. Se você inverte, o creme mais pesado cria uma barreira e o produto seguinte não entra.\n\nÀ noite, o protetor sai e entra o creme de tratamento.\n\nNão precisa ter todos. Precisa ter os certos, na ordem."
+      "corpo": "Quase todo mundo erra o passo 3.\n\nA regra é simples: do mais líquido para o mais denso. Se você inverte, o creme mais pesado cria uma barreira e o produto seguinte não entra.\n\nÀ noite, o protetor sai e entra o creme de tratamento.\n\nNão precisa ter todos. Precisa ter os certos, na ordem.",
+      "slides": [
+        {
+          "tipo": "capa",
+          "titulo": "A ordem certa do seu skincare",
+          "texto": "Quase todo mundo erra o passo 3.",
+          "produto": "sistema-completo-timewise.png"
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Limpar",
+          "texto": "Tira a oleosidade e a poluição do dia. Sem isso, nada do que vem depois entra."
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Tônico",
+          "texto": "Devolve o equilíbrio da pele e prepara para absorver o que vem a seguir."
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Sérum",
+          "texto": "É aqui que mora o ativo. É também o passo que mais gente pula."
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Hidratante",
+          "texto": "Sela tudo o que veio antes e segura a água dentro da pele."
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Protetor solar",
+          "texto": "De manhã, sempre, mesmo em casa. À noite ele sai e entra o tratamento."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "A regra por trás de tudo isso",
+          "etiqueta": "o porquê",
+          "texto": "Do mais líquido para o mais denso. Se você inverte, o creme pesado vira barreira e o que vem depois não atravessa."
+        },
+        {
+          "tipo": "cta",
+          "titulo": "Salva pra não errar a ordem.",
+          "texto": "E me conta no Direct quais desses cinco você já tem — eu monto a sua rotina com o que está na sua gaveta."
+        }
+      ]
     },
     {
       "id": 2,
@@ -32,7 +76,46 @@
       "gancho": "Sabonete de corpo serve para o rosto",
       "mito": "Sabonete de corpo serve pro rosto — é tudo pele.",
       "verdade": "A pele do rosto é mais fina e tem outro pH. Sabonete de corpo arranca a barreira e ela responde com mais oleosidade.",
-      "corpo": "É o erro mais comum que eu vejo — e o mais barato de corrigir.\n\nA pele do rosto tem a barreira mais delicada do corpo. Sabonete de corpo é alcalino demais: tira a proteção junto com a sujeira. Aí a pele resseca, se assusta e produz mais óleo pra compensar.\n\nResultado: pele oleosa E ressecada ao mesmo tempo. Sim, dá as duas coisas."
+      "corpo": "É o erro mais comum que eu vejo — e o mais barato de corrigir.\n\nA pele do rosto tem a barreira mais delicada do corpo. Sabonete de corpo é alcalino demais: tira a proteção junto com a sujeira. Aí a pele resseca, se assusta e produz mais óleo pra compensar.\n\nResultado: pele oleosa E ressecada ao mesmo tempo. Sim, dá as duas coisas.",
+      "slides": [
+        {
+          "tipo": "capa",
+          "titulo": "Sabonete de corpo no rosto",
+          "texto": "O erro mais comum que eu vejo — e o mais barato de corrigir."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O que a gente acha",
+          "etiqueta": "mito",
+          "texto": "“É tudo pele, então serve.”"
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O que é de verdade",
+          "etiqueta": "verdade",
+          "texto": "A pele do rosto é mais fina e tem outro pH. Sabonete de corpo é alcalino demais para ela."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O que acontece",
+          "texto": "Ele arranca a barreira junto com a sujeira. A pele resseca, se assusta e produz mais óleo para compensar."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "Como saber que é o seu caso",
+          "texto": "Pele que repuxa depois do banho e fica oleosa duas horas depois. Sim, dá as duas coisas ao mesmo tempo."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O que fazer",
+          "texto": "Um gel ou espuma de limpeza facial. É o item mais barato da rotina e o que mais muda o resultado."
+        },
+        {
+          "tipo": "cta",
+          "titulo": "Compartilha com quem lava o rosto no banho.",
+          "texto": "É a correção que dá resultado mais rápido — e não custa quase nada."
+        }
+      ]
     },
     {
       "id": 4,
@@ -62,7 +145,45 @@
       "gancho": "Protetor solar é só pra praia",
       "mito": "Protetor solar é só pra quem vai pegar sol.",
       "verdade": "A luz da janela e a da tela também marcam. Quem trabalha dentro de casa envelhece de um lado só do rosto.",
-      "corpo": "Existe um estudo clássico de um caminhoneiro que passou 28 anos com o lado esquerdo do rosto na janela. Os dois lados tinham a mesma idade. Não pareciam.\n\nUVA atravessa vidro. Você não sente, não queima, não fica vermelha — e ela vai marcando.\n\nProtetor de manhã, todo dia, mesmo sem sair."
+      "corpo": "Existe um estudo clássico de um caminhoneiro que passou 28 anos com o lado esquerdo do rosto na janela. Os dois lados tinham a mesma idade. Não pareciam.\n\nUVA atravessa vidro. Você não sente, não queima, não fica vermelha — e ela vai marcando.\n\nProtetor de manhã, todo dia, mesmo sem sair.",
+      "slides": [
+        {
+          "tipo": "capa",
+          "titulo": "“Fico em casa o dia todo, não preciso de protetor”",
+          "texto": "Era o que eu também achava."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "UVA atravessa vidro",
+          "etiqueta": "verdade",
+          "texto": "Você não sente, não queima, não fica vermelha. E ela vai marcando."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O caso que ficou famoso",
+          "texto": "Um caminhoneiro passou 28 anos com o lado esquerdo do rosto na janela. Os dois lados tinham a mesma idade. Não pareciam."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "Onde você toma sol sem perceber",
+          "texto": "Janela do escritório, vidro do carro, varanda, os dez minutos do portão até o mercado."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O que fazer",
+          "texto": "Protetor de manhã, todo dia. Rosto, pescoço e mãos — as mãos entregam a idade antes do rosto."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "Por que vale tanto",
+          "texto": "80% do envelhecimento da pele vem do sol, não da idade. É a única parte que está no seu controle."
+        },
+        {
+          "tipo": "cta",
+          "titulo": "Salva e passa amanhã de manhã.",
+          "texto": "Se não souber qual textura combina com a sua pele, me chama no Direct."
+        }
+      ]
     },
     {
       "id": 7,
@@ -105,7 +226,44 @@
         "Você usa protetor todo dia, inclusive em casa?",
         "Você usa o que já tem até acabar?"
       ],
-      "corpo": "Se a resposta for não em alguma delas, o creme caro não vai resolver.\n\nEu já vi muita gente gastando em sérum de alto valor e lavando o rosto com sabonete de corpo. É como comprar tênis de corrida e correr na areia fofa.\n\nArruma a base primeiro. Aí o produto bom aparece."
+      "corpo": "Se a resposta for não em alguma delas, o creme caro não vai resolver.\n\nEu já vi muita gente gastando em sérum de alto valor e lavando o rosto com sabonete de corpo. É como comprar tênis de corrida e correr na areia fofa.\n\nArruma a base primeiro. Aí o produto bom aparece.",
+      "slides": [
+        {
+          "tipo": "capa",
+          "titulo": "Antes de comprar creme caro, responde isso",
+          "texto": "Três perguntas. Se falhar em uma, o creme não vai resolver."
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Você lava o rosto com produto de rosto?",
+          "texto": "Sabonete de corpo é alcalino demais: arranca a barreira e a pele responde com mais óleo."
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Você usa protetor todo dia?",
+          "texto": "Inclusive em casa. Sem isso, qualquer tratamento vira enxugar gelo."
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Você usa o que já tem até acabar?",
+          "texto": "Rotina trocada toda semana não dá tempo de a pele responder a nada."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "Já vi isso muitas vezes",
+          "texto": "Gente comprando sérum de alto valor e lavando o rosto com sabonete de corpo. É tênis de corrida para correr na areia fofa."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "Arruma a base primeiro",
+          "texto": "Aí o produto bom aparece — e você gasta menos para ter mais resultado."
+        },
+        {
+          "tipo": "cta",
+          "titulo": "Salva antes da próxima compra.",
+          "texto": "Se quiser, me chama no Direct com as suas três respostas. Eu te digo por onde começar."
+        }
+      ]
     },
     {
       "id": 11,
@@ -123,7 +281,45 @@
       "gancho": "Pele oleosa não precisa de hidratante",
       "mito": "Pele oleosa não precisa de hidratante.",
       "verdade": "Pele sem água produz MAIS óleo para se defender. Hidratar é o que desliga a oleosidade.",
-      "corpo": "Óleo e água são coisas diferentes. Dá pra ter muito óleo e nenhuma água ao mesmo tempo — é o quadro mais comum que eu vejo.\n\nQuando você tira o óleo e não repõe água, a pele entende que está em risco e produz o dobro. Aí você lava de novo. E o ciclo se fecha.\n\nHidratante em gel, textura leve, sem óleo. Todo dia."
+      "corpo": "Óleo e água são coisas diferentes. Dá pra ter muito óleo e nenhuma água ao mesmo tempo — é o quadro mais comum que eu vejo.\n\nQuando você tira o óleo e não repõe água, a pele entende que está em risco e produz o dobro. Aí você lava de novo. E o ciclo se fecha.\n\nHidratante em gel, textura leve, sem óleo. Todo dia.",
+      "slides": [
+        {
+          "tipo": "capa",
+          "titulo": "“Minha pele é oleosa, não uso hidratante”",
+          "texto": "É o conselho que mais estraga pele boa."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O que quase ninguém separa",
+          "etiqueta": "o começo do erro",
+          "texto": "Óleo e água são coisas diferentes. Dá para ter muito óleo e nenhuma água ao mesmo tempo."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O que a pele faz",
+          "texto": "Sem água, ela entende que está em risco e produz o dobro de óleo para se proteger."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O ciclo que se fecha",
+          "texto": "Você lava para tirar o óleo. Ela produz mais. Você lava de novo. E assim vai, por anos."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "Como quebrar",
+          "texto": "Hidratante em gel, textura leve, sem óleo. Todo dia, de manhã e à noite."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O que esperar",
+          "texto": "Em duas ou três semanas a oleosidade cai. Não some — regula, que é o que você quer."
+        },
+        {
+          "tipo": "cta",
+          "titulo": "Manda pra amiga de pele oleosa.",
+          "texto": "Ela provavelmente está lavando o rosto três vezes por dia achando que ajuda."
+        }
+      ]
     },
     {
       "id": 13,
@@ -164,7 +360,46 @@
         "Tratar — sérum ou creme de tratamento",
         "Selar com hidratante e dormir"
       ],
-      "corpo": "De dia a pele se defende. De noite ela repara.\n\nPor isso o protetor é o herói da manhã e o tratamento é o herói da noite — trocar a ordem desperdiça os dois.\n\nQuatro passos. Dá cinco minutos, no máximo."
+      "corpo": "De dia a pele se defende. De noite ela repara.\n\nPor isso o protetor é o herói da manhã e o tratamento é o herói da noite — trocar a ordem desperdiça os dois.\n\nQuatro passos. Dá cinco minutos, no máximo.",
+      "slides": [
+        {
+          "tipo": "capa",
+          "titulo": "A noite é quando a pele trabalha",
+          "texto": "De dia ela se defende. De noite ela repara.",
+          "produto": "gel-de-recuperacao-noturna-timewise.png"
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Tirar tudo",
+          "texto": "Maquiagem, protetor e poluição. Água micelar no algodão resolve em trinta segundos."
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Limpar de verdade",
+          "texto": "Com produto de rosto. A limpeza da noite é a mais importante do dia inteiro."
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Tratar",
+          "texto": "Sérum ou creme de tratamento. É agora que o ativo é melhor aproveitado."
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Selar",
+          "texto": "Hidratante por cima, para nada evaporar enquanto você dorme."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O que você ganha com isso",
+          "etiqueta": "o porquê",
+          "texto": "É à noite que a pele renova célula, repara o dano do dia e produz colágeno. Com o poro entupido, ela faz isso pela metade."
+        },
+        {
+          "tipo": "cta",
+          "titulo": "Cinco minutos. Todo dia.",
+          "texto": "Salva pra lembrar hoje à noite — e me conta amanhã se a pele acordou diferente."
+        }
+      ]
     },
     {
       "id": 17,
@@ -185,7 +420,44 @@
         "Renovar a pele com constância",
         "Proteger — sem isso, tudo volta"
       ],
-      "corpo": "Mancha tem memória. A célula que produziu pigmento demais uma vez faz de novo com muito menos estímulo.\n\nPor isso clarear sem proteger é enxugar gelo: você tira, o sol devolve.\n\nA ordem importa: proteção não é o último passo do tratamento. É o que sustenta ele."
+      "corpo": "Mancha tem memória. A célula que produziu pigmento demais uma vez faz de novo com muito menos estímulo.\n\nPor isso clarear sem proteger é enxugar gelo: você tira, o sol devolve.\n\nA ordem importa: proteção não é o último passo do tratamento. É o que sustenta ele.",
+      "slides": [
+        {
+          "tipo": "capa",
+          "titulo": "Por que a mancha volta sempre no mesmo lugar",
+          "texto": "Mancha tem memória. É isso que quase ninguém te conta."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O que está acontecendo",
+          "texto": "A célula que produziu pigmento demais uma vez faz de novo com muito menos estímulo. Ela aprendeu o caminho."
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Clarear",
+          "texto": "Trata o que já está lá. É por onde todo mundo começa — e onde quase todo mundo para."
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Renovar",
+          "texto": "Acelera a troca de células. Constância vale muito mais do que produto forte."
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Proteger",
+          "texto": "Sem isso o sol devolve tudo. Proteção não é o último passo do tratamento: é o que sustenta ele."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O erro clássico",
+          "texto": "Clarear sem proteger é enxugar gelo. Você tira no inverno e o verão devolve inteirinho."
+        },
+        {
+          "tipo": "cta",
+          "titulo": "Salva pra consultar no verão.",
+          "texto": "E se a sua mancha já voltou mais de uma vez, me chama: provavelmente falta o passo 3."
+        }
+      ]
     },
     {
       "id": 19,
@@ -222,7 +494,40 @@
       "gancho": "O pescoço entrega a idade que o rosto esconde",
       "mito": "Cuidar do rosto é suficiente.",
       "verdade": "O pescoço e o colo têm pele mais fina e menos glândula. Envelhecem primeiro — e é lá que a idade aparece.",
-      "corpo": "Você cuida do rosto há anos, olha no espelho e acha que está tudo certo. Aí vê uma foto de perfil.\n\nA pele do pescoço tem menos suporte e recebe muito mais sol do que a gente imagina.\n\nRegra fácil: o que sobrar na mão depois do rosto, você espalha no pescoço e no colo, sempre de baixo pra cima. Custa zero."
+      "corpo": "Você cuida do rosto há anos, olha no espelho e acha que está tudo certo. Aí vê uma foto de perfil.\n\nA pele do pescoço tem menos suporte e recebe muito mais sol do que a gente imagina.\n\nRegra fácil: o que sobrar na mão depois do rosto, você espalha no pescoço e no colo, sempre de baixo pra cima. Custa zero.",
+      "slides": [
+        {
+          "tipo": "capa",
+          "titulo": "O pescoço entrega a idade que o rosto esconde",
+          "texto": "Você cuida do rosto há anos — e aí vê uma foto de perfil."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "Por que ele envelhece primeiro",
+          "etiqueta": "verdade",
+          "texto": "A pele do pescoço e do colo é mais fina e tem menos glândula. Tem menos suporte para se manter firme."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "E ainda leva mais sol",
+          "texto": "Decote, dirigindo, andando na rua. Quase ninguém passa protetor ali."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "A regra fácil",
+          "texto": "O que sobrar na mão depois do rosto, você espalha no pescoço e no colo. Custa zero e muda tudo."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "Sempre de baixo para cima",
+          "texto": "Acompanhando o sentido em que a pele se sustenta, nunca puxando para baixo."
+        },
+        {
+          "tipo": "cta",
+          "titulo": "Salva e faz hoje à noite.",
+          "texto": "É a mudança de hábito com melhor custo-benefício da rotina inteira: zero real."
+        }
+      ]
     },
     {
       "id": 23,
@@ -260,7 +565,41 @@
       "gancho": "Esfoliar todo dia deixa a pele mais lisa",
       "mito": "Quanto mais eu esfolio, mais lisa a pele fica.",
       "verdade": "Esfoliar demais tira a barreira. A pele fica sensível, vermelha e — de novo — mais oleosa.",
-      "corpo": "Esfoliação é acelerador de renovação, não borracha de apagar.\n\nUma a duas vezes por semana é o suficiente para a maioria das peles. Todo dia é agressão: arde, descama e a pele revida.\n\nSe depois de esfoliar arde ao passar o hidratante, você passou do ponto. Dá uma semana de folga."
+      "corpo": "Esfoliação é acelerador de renovação, não borracha de apagar.\n\nUma a duas vezes por semana é o suficiente para a maioria das peles. Todo dia é agressão: arde, descama e a pele revida.\n\nSe depois de esfoliar arde ao passar o hidratante, você passou do ponto. Dá uma semana de folga.",
+      "slides": [
+        {
+          "tipo": "capa",
+          "titulo": "Esfoliar todo dia não deixa a pele mais lisa",
+          "texto": "Deixa mais sensível. E, de novo, mais oleosa.",
+          "produto": "esfoliante-facial.png"
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O que a esfoliação é",
+          "etiqueta": "verdade",
+          "texto": "Um acelerador de renovação. Não é borracha de apagar — não adianta esfregar mais."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O que acontece no excesso",
+          "texto": "A barreira vai embora. A pele fica vermelha, sensível e produz mais óleo para se defender."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "A frequência certa",
+          "texto": "Uma a duas vezes por semana serve para a maioria das peles. Pele sensível: uma, e olhe lá."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "Como saber que passou do ponto",
+          "texto": "Se arde ao passar o hidratante depois, você exagerou. Dá uma semana de folga para a barreira voltar."
+        },
+        {
+          "tipo": "cta",
+          "titulo": "Salva antes do próximo esfoliante.",
+          "texto": "E se a sua pele anda ardendo sem motivo, me chama — quase sempre é isso."
+        }
+      ]
     },
     {
       "id": 27,
@@ -292,7 +631,45 @@
         "Hidratante — o que recupera a barreira",
         "Só então o sérum ou o tratamento"
       ],
-      "corpo": "A ordem de compra não é a ordem de uso — e é aqui que quase todo mundo erra.\n\nQuem começa pelo sérum caro está tratando uma pele que continua sendo agredida todo dia. Quem começa pelo protetor para o dano primeiro.\n\nUm item por mês. Em quatro meses você tem uma rotina completa sem sentir no bolso."
+      "corpo": "A ordem de compra não é a ordem de uso — e é aqui que quase todo mundo erra.\n\nQuem começa pelo sérum caro está tratando uma pele que continua sendo agredida todo dia. Quem começa pelo protetor para o dano primeiro.\n\nUm item por mês. Em quatro meses você tem uma rotina completa sem sentir no bolso.",
+      "slides": [
+        {
+          "tipo": "capa",
+          "titulo": "Começando do zero? Compra nessa ordem",
+          "texto": "A ordem de compra não é a ordem de uso — e é aqui que quase todo mundo erra.",
+          "produto": "protetor-solar-fps-50.png"
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Protetor solar",
+          "texto": "O que mais devolve resultado. É o único que impede o dano em vez de tentar consertar depois."
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Limpeza de rosto",
+          "texto": "O que para de estragar. Produto de rosto, não sabonete de corpo."
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Hidratante",
+          "texto": "O que recupera a barreira e faz a pele parar de repuxar."
+        },
+        {
+          "tipo": "passo",
+          "titulo": "Só então o sérum",
+          "texto": "Antes disso ele trabalha numa pele que continua sendo agredida todo dia."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "Um item por mês",
+          "texto": "Em quatro meses você tem uma rotina completa sem sentir no bolso — e usa cada um até acabar."
+        },
+        {
+          "tipo": "cta",
+          "titulo": "Salva e começa pelo primeiro.",
+          "texto": "Me chama que eu te digo qual versão de cada um combina com a sua pele."
+        }
+      ]
     },
     {
       "id": 30,
@@ -312,7 +689,41 @@
       "gancho": "Beber água hidrata a sua pele",
       "mito": "Se eu beber muita água, minha pele hidrata.",
       "verdade": "A água chega por dentro e evapora por fora. Sem barreira que segure, ela sai — e a pele continua ressecada.",
-      "corpo": "Beber água é essencial pro corpo. Só não faz o trabalho do hidratante.\n\nA hidratação da pele depende da barreira que segura a água ali dentro. Se a barreira está danificada — sabonete errado, esfoliação demais, sol — a água evapora de qualquer jeito.\n\nBebe água E hidrata. Não é escolha."
+      "corpo": "Beber água é essencial pro corpo. Só não faz o trabalho do hidratante.\n\nA hidratação da pele depende da barreira que segura a água ali dentro. Se a barreira está danificada — sabonete errado, esfoliação demais, sol — a água evapora de qualquer jeito.\n\nBebe água E hidrata. Não é escolha.",
+      "slides": [
+        {
+          "tipo": "capa",
+          "titulo": "Beber água não hidrata a sua pele",
+          "texto": "Pelo menos não do jeito que te contaram.",
+          "produto": "hidratante-antioxidante-timewise.png"
+        },
+        {
+          "tipo": "nota",
+          "titulo": "Como a água chega lá",
+          "etiqueta": "verdade",
+          "texto": "Ela vem por dentro, sobe até a pele e evapora pela superfície o dia inteiro."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O que segura essa água",
+          "texto": "A barreira da pele. Se ela está danificada, a água sai de qualquer jeito — beba o que beber."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O que danifica a barreira",
+          "texto": "Sabonete errado, esfoliação demais, sol sem proteção e banho muito quente."
+        },
+        {
+          "tipo": "nota",
+          "titulo": "O que fazer",
+          "texto": "Bebe água E hidrata. Um não substitui o outro: o hidratante é a tampa do copo."
+        },
+        {
+          "tipo": "cta",
+          "titulo": "Salva pra lembrar dos dois.",
+          "texto": "Se a sua pele repuxa mesmo bebendo dois litros por dia, o problema é a barreira. Me chama."
+        }
+      ]
     },
     {
       "id": 32,

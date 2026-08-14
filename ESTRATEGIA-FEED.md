@@ -3,6 +3,10 @@
 Revisão de 14/08/2026. Substitui a parte visual da `ESTRATEGIA.md` (que continua
 valendo para pilares, CTA, SEO e bio).
 
+**Duas mudanças estruturais nesta revisão:** o rosto da Marcia virou recurso
+racionado (seções 1 a 4) e o **carrossel entrou no feed** (seção 5) — o formato
+de maior salvamento do Instagram, que o sistema estava deixando na mesa.
+
 ---
 
 ## 1. O problema, com número
@@ -103,25 +107,77 @@ fotos diferentes, nenhuma repetida.**
 
 ---
 
-## 5. A grade — o perfil é lido como mosaico, não como post
+## 5. Carrossel — o formato que faltava
+
+Pesquisa de 14/08/2026 sobre o que o algoritmo premia hoje:
+
+- **Salvamento é o sinal que mais pesa** no ranqueamento, e Mosseri já disse
+  publicamente que um compartilhamento vale mais que dez curtidas.
+- **Carrossel salva 2–3× mais que Reels** e é o formato com maior taxa de
+  engajamento desde 2023 — não é um trimestre fora da curva, é padrão estrutural.
+- **Reels ganha alcance** (taxa de alcance mais que o dobro da do carrossel);
+  **carrossel ganha engajamento**. Não são concorrentes: resolvem problemas
+  diferentes, e o feed precisa dos dois.
+- O sinal dominante do carrossel é **tempo no post**: cada slide que a pessoa
+  passa soma segundos, e o algoritmo compara esse tempo com a média de
+  carrosséis do mesmo tamanho.
+
+Por isso o slot das 19h passou a **alternar carrossel e imagem única** — ~4
+carrosséis por semana. Alternar em vez de usar sempre tem duas razões: variedade
+na grade, e o fato de que nem todo conteúdo rende sete slides sem encher
+linguiça (carrossel ruim derruba justamente a taxa de conclusão, que é o que o
+formato mede).
+
+**Estrutura de cada peça** (`carrossel.py`), seguindo o que a pesquisa aponta:
+
+| Slide | Papel |
+|---|---|
+| 1 — capa | gancho curto e grande, pista de arraste; em 5 das 11, packshot do produto |
+| 2…n−1 — miolo | **uma** ideia por slide, corpo curto (passo numerado ou nota) |
+| n — CTA | sempre escuro, sempre com pedido de ação explícito |
+
+Sete a nove slides é o ponto doce; a API para em 10. Pontinhos de progresso no
+topo mostram quanto falta — parece detalhe e não é: saber que faltam dois slides
+segura o arraste até o fim.
+
+**O carrossel não tem banco próprio.** Ele é uma leitura mais funda do conteúdo
+que já existe: quem tem `slides` em `conteudos.json` vira carrossel. Hoje são
+**11** (os 5 rituais e os 6 mitos) — os formatos que já nasciam com estrutura de
+lista. Isso dobra o valor do banco em vez de exigir 16 peças novas.
+
+Tecnicamente: a API cria **um container filho por imagem** com
+`is_carousel_item=true`, cada um tem de chegar a `FINISHED`, e só então nasce o
+container pai com `media_type=CAROUSEL` e a lista de ids. Publicar com um filho
+ainda baixando devolve o erro 100, que é genérico e não diz qual item falhou.
+
+## 6. A grade — o perfil é lido como mosaico, não como post
 
 Desde 2025 a grade do perfil é **4:5**, não quadrada. O visitante vê 9 peças de
 uma vez, e é isso que decide se ele segue.
 
 - **Ritmo claro/escuro:** quatro tons (areia, rosé, creme, café) rotacionados
   com trava contra dois escuros seguidos. Grade só clara parece catálogo; só
-  escura parece funeral. Na simulação: areia 8, rosé 6, creme 5, café 5.
+  escura parece funeral. Em 30 peças simuladas: areia 8, rosé 8, creme 7, café 7.
 - **Capa de Reels com texto centralizado:** a grade mostra só o miolo do 9:16.
   Gancho ancorado no rodapé aparecia **cortado no meio da palavra** no perfil —
   corrigido.
-- **Sem gancho repetido:** roteiro de Reels e post estático não podem carregar a
-  mesma frase, senão ela aparece duas vezes na mesma tela do perfil.
+- **A cena de rosto é a CAPA do Reels, não o meio.** Era o erro mais caro que
+  restava: o vídeo gastava a foto na cena 3, o orçamento de rosto era debitado, e
+  quem visitava o perfil via um cartão de texto. Comprava o ativo escasso e não
+  mostrava. Agora, quando um Reels usa o rosto, ele aparece na grade.
+- **Nem toda capa pode ser tipografia.** Com carrossel + Reels, quase tudo virava
+  cartão de texto e a grade ficava monótona mesmo com cada peça bonita. Cinco das
+  onze capas de carrossel levam packshot.
+- **Sem gancho repetido entre bancos.** `ferramentas/conferir_bancos.py` compara
+  todas as capas dos dois bancos e barra pares acima de 72% de semelhança — cada
+  banco estava certo sozinho, o erro só existia entre eles (achou 8 colisões na
+  primeira rodada).
 
-Mosaico simulado de 12 dias: `saida-amostra/simulacao/00-perfil.jpg`.
+Mosaico simulado de 15 dias: `saida-amostra/simulacao/00-perfil.jpg`.
 
 ---
 
-## 6. O que ainda depende da Marcia — e é o que mais vale
+## 7. O que ainda depende da Marcia — e é o que mais vale
 
 O sistema agora aguenta rodar meses sem foto nova. Mas o que separa o feed dela
 do feed de qualquer outra consultora **não é o packshot oficial** — é foto
@@ -144,26 +200,50 @@ produzir. Vale muito mais do que 15 selfies.
 
 ---
 
-## 7. Pendências (em ordem de urgência)
+## 8. Cadência e fôlego dos bancos
 
-1. **Banco de Reels acaba em 12 dias** (26/08/2026). São 12 roteiros para uma
-   peça por dia; o de estáticos tem 32. Repor `reels.json` antes disso — o
-   workflow abre issue ao esgotar, mas aí já é atraso.
-2. **Carrossel** — é o formato de maior salvamento do nicho e o único do sistema
-   que ainda não existe. A API aceita (containers filhos com
-   `is_carousel_item=true` e depois um container `CAROUSEL`); a arte já está
-   pronta, bastaria encadear 5 peças. Fase 2.
-3. **Fotos da lista da seção 6.**
-4. **Nome do perfil e CEP** — continuam pendentes no app do celular (ver
-   `CLAUDE.md`), e o campo Nome é a maior alavanca de descoberta que existe.
+| Horário BRT | Peça | Papel |
+|---|---|---|
+| 09h | **Reels**, todo dia | alcance (taxa de alcance ~2× a do carrossel) |
+| 19h | **carrossel** ou **imagem única**, alternando | salvamento e engajamento |
+| após cada post | story de reforço | tráfego para o perfil |
+
+| Banco | Tamanho | Fôlego |
+|---|---|---|
+| `reels.json` | 24 roteiros | ~3 semanas (1/dia) |
+| `conteudos.json` — carrossel | 11 | ~3 semanas (dia sim, dia não) |
+| `conteudos.json` — imagem única | 32 (21 sem `slides`) | ~6 semanas |
+
+Repor com `ferramentas/repor_reels.py` e `ferramentas/injetar_slides.py`, que
+acrescentam sem reescrever o banco inteiro — foi assim para não perder roteiro
+no meio de um arquivo de 900 linhas.
 
 ---
 
-## 8. Como conferir sem publicar
+## 9. Pendências (em ordem de urgência)
+
+1. **Fotos da lista da seção 7** — é a única coisa que o sistema não produz
+   sozinho, e é a que mais diferencia o perfil.
+2. **Nome do perfil e CEP** — continuam pendentes no app do celular (ver
+   `CLAUDE.md`), e o campo Nome é a maior alavanca de descoberta que existe.
+3. **Repor os bancos até ~05/09/2026**, quando o de Reels e o de carrossel
+   chegam ao fim. O workflow abre issue ao esgotar, mas aí já é atraso.
+4. **Carrossel com foto real dela** — hoje todo slide é arte. Quando as fotos da
+   seção 7 chegarem, o slide de prova ("olha a textura na minha mão") é o que
+   mais deve subir a taxa de conclusão.
+
+---
+
+## 10. Como conferir sem publicar
 
 ```bash
+python ferramentas/conferir_bancos.py       # capas repetidas, campos, referências
 python ferramentas/amostra_formatos.py      # um exemplo de cada formato
-python ferramentas/simular_feed.py 14       # 14 dias de feed + mosaico + números
-python publicar_estatico.py --ensaio        # a peça real de hoje
+python ferramentas/simular_feed.py 15       # 15 dias de feed + mosaico + números
+python publicar_estatico.py --ensaio        # a peça real de hoje (carrossel ou única)
+python publicar_estatico.py --ensaio --unico   # força imagem única
 python publicar_reels.py --ensaio           # o Reels real de hoje
 ```
+
+`conferir_bancos.py` sai com código 1 quando acha problema — é o portão a passar
+antes de qualquer commit que mexa nos bancos.

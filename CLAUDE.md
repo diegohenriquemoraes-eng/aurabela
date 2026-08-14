@@ -32,23 +32,26 @@ do sofá.
 | `config.py` | IDs da conta/app e leitura do token (nada de segredo no repo) |
 | `tipografia.py` | Playfair Display + Montserrat (variáveis) e a paleta |
 | `arte.py` | Primitivas visuais: tons, fundo com grão, tracking, selo, ajuste de corpo |
-| `formatos.py` | Os 6 formatos do feed 1080x1350 (ver ESTRATEGIA-FEED.md) |
+| `formatos.py` | Os 6 formatos de peça única 1080x1350 (ver ESTRATEGIA-FEED.md) |
+| `carrossel.py` | Slides do carrossel (capa, passo, nota, fecho) — o formato que mais salva |
 | `curadoria.py` | **Quem entra hoje, em que formato e em que tom** — e o orçamento de rosto |
 | `foto.py` | Tratamento das fotos reais dela (letterbox, luz, recorte com foco) |
 | `gerar_reels.py` | ffmpeg → Reels 1080x1920; cenas de texto, produto ou retrato |
 | `gerar_story.py` | Story 1080x1920 com a arte emoldurada |
 | `legenda.py` | Ciclos de CTA e de pilar (com memória) + legenda com SEO |
 | `publicador.py` | Peças comuns: API, git, fila, estado |
-| `publicar_estatico.py` / `publicar_reels.py` | Os dois publicadores |
+| `publicar_estatico.py` / `publicar_reels.py` | Os dois publicadores (o das 19h alterna carrossel e imagem única) |
 | `renovar_token.py` | Renova o token de 60 dias (roda todo mês) |
-| `conteudos.json` | Banco de 32 posts estáticos (com formato por post) |
-| `reels.json` | Banco de 12 roteiros de Reels (cenas com tipo) |
+| `conteudos.json` | Banco de 32 posts (formato por post; 11 têm `slides` e viram carrossel) |
+| `reels.json` | Banco de 24 roteiros de Reels (cenas com tipo) |
 | `produtos.json` + `produtos/` | 48 packshots de skincare Mary Kay (catálogo VTEX da loja) |
 | `publicados.json` / `estado_ciclo.json` | O que saiu + memória dos ciclos |
 | `fotos/` | **Fotos reais em alta** da Marcia (ref-01 … ref-12) — recurso ESCASSO |
 | `ferramentas/baixar_produtos.py` | Rebaixa o catálogo (local, não roda no Actions) |
 | `ferramentas/simular_feed.py` | Simula N dias e monta o mosaico do perfil, sem publicar |
 | `ferramentas/amostra_formatos.py` | Um exemplo de cada formato |
+| `ferramentas/conferir_bancos.py` | **Portão antes do commit**: capas repetidas entre bancos, campos, referências |
+| `ferramentas/repor_reels.py` / `injetar_slides.py` | Acrescentam ao banco sem reescrevê-lo |
 
 ## As duas decisões de arquitetura que sustentam o projeto
 
@@ -188,6 +191,18 @@ não entra** (divide a mensagem de um perfil de venda).
 - **Medir para caber, não estimar por nº de caracteres** (`arte.caber`): escala
   fixa por contagem estoura com palavra longa. E `evitar_orfao=True` onde o
   texto é centrado, senão sobra uma palavra sozinha na última linha.
+- **Cada banco certo sozinho, errado entre si.** O mesmo gancho em
+  `conteudos.json` e em `reels.json` vira duas peças iguais lado a lado na grade
+  do perfil. Só apareceu no mosaico da simulação — por isso existe
+  `ferramentas/conferir_bancos.py`, que barra capas acima de 72% de semelhança.
+- **A cena de rosto do Reels tem de ser a CAPA.** No meio do vídeo ela debita o
+  orçamento de rosto e não aparece na grade: gasta o recurso escasso sem mostrar.
+- **Carrossel: todo filho tem de chegar a FINISHED** antes de entrar no
+  container pai. Publicar com um filho ainda baixando devolve erro 100 de
+  validação, que é genérico e não diz qual item falhou.
+- **Um bloco de texto centrado por cálculo fica alto demais** (`altura()` conta o
+  entrelinha da última linha, que não é tinta). O centro óptico dos slides ficou
+  em 0,51 da altura, não 0,46.
 - **Repositório público** é obrigatório: a API baixa a mídia por URL https
   pública (`raw.githubusercontent.com`) e não aceita upload de arquivo local —
   mesma razão do vendanaobra.
@@ -221,9 +236,13 @@ python publicar_reels.py --ensaio       # monta o mp4 e mostra a legenda
 python publicar_estatico.py --id 7      # conteúdo específico
 python renovar_token.py --checar        # confere se o token está vivo
 
-python ferramentas/simular_feed.py 14   # 14 dias de feed + mosaico, sem publicar
+python ferramentas/conferir_bancos.py   # PORTÃO: capas repetidas, campos, referências
+python ferramentas/simular_feed.py 15   # 15 dias de feed + mosaico, sem publicar
 python ferramentas/amostra_formatos.py  # um exemplo de cada formato
 python ferramentas/baixar_produtos.py   # rebaixa o catálogo Mary Kay (só local)
+
+python publicar_estatico.py --ensaio --unico       # força imagem única
+python publicar_estatico.py --ensaio --carrossel   # força carrossel
 ```
 
 ## Conteúdo
@@ -236,6 +255,7 @@ hora.
 Quando o banco ficar com ≤8 conteúdos (ou ≤4 roteiros), o publicador avisa no
 log e o workflow abre issue ao esgotar.
 
-**Atenção ao desequilíbrio dos bancos:** 32 estáticos (≈1 mês) contra 12
-roteiros de Reels (≈12 dias). O de Reels acaba primeiro — repor antes de
-26/08/2026.
+**Fôlego dos bancos:** 24 roteiros de Reels (~3 semanas, 1/dia), 11 carrosséis
+(~3 semanas, dia sim dia não) e 21 posts de imagem única (~6 semanas). Os dois
+primeiros acabam por volta de **05/09/2026** — repor antes com
+`ferramentas/repor_reels.py` e `ferramentas/injetar_slides.py`.
