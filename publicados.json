@@ -56,6 +56,16 @@
       "cta": "pele",
       "pilar": "educativo",
       "rosto": true
+    },
+    {
+      "tipo": "estatico",
+      "id": 6,
+      "data": "2026-08-14",
+      "media_id": "18103228519900370",
+      "cta": "vitrine",
+      "pilar": "prova",
+      "formato": "carrossel",
+      "tom": "areia"
     }
   ]
 }
