@@ -6,7 +6,9 @@
       "data": "2026-08-13",
       "media_id": "18059395964510291",
       "cta": "seguir",
-      "pilar": "educativo"
+      "pilar": "educativo",
+      "rosto": true,
+      "foto": "ref-02-closeup-frontal-oculos-grau.webp"
     },
     {
       "tipo": "reels",
@@ -14,7 +16,8 @@
       "data": "2026-08-13",
       "media_id": "18145392499539548",
       "cta": "pele",
-      "pilar": "prova"
+      "pilar": "prova",
+      "rosto": true
     },
     {
       "tipo": "reels",
@@ -22,7 +25,8 @@
       "data": "2026-08-13",
       "media_id": "17878692450686570",
       "cta": "vitrine",
-      "pilar": "produto"
+      "pilar": "produto",
+      "rosto": true
     },
     {
       "tipo": "estatico",
@@ -30,7 +34,9 @@
       "data": "2026-08-13",
       "media_id": "18097355465245529",
       "cta": "pele",
-      "pilar": "autocuidado"
+      "pilar": "autocuidado",
+      "rosto": true,
+      "foto": "ref-03-closeup-oculos-boina.jpg"
     },
     {
       "tipo": "estatico",
@@ -38,7 +44,9 @@
       "data": "2026-08-14",
       "media_id": "18103102115605653",
       "cta": "oferta",
-      "pilar": "educativo"
+      "pilar": "educativo",
+      "rosto": true,
+      "foto": "ref-01-closeup-frontal-sem-oculos.jpg"
     },
     {
       "tipo": "reels",
@@ -46,7 +54,8 @@
       "data": "2026-08-14",
       "media_id": "18374574805226978",
       "cta": "pele",
-      "pilar": "educativo"
+      "pilar": "educativo",
+      "rosto": true
     }
   ]
 }
