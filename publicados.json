@@ -31,6 +31,14 @@
       "media_id": "18097355465245529",
       "cta": "pele",
       "pilar": "autocuidado"
+    },
+    {
+      "tipo": "estatico",
+      "id": 3,
+      "data": "2026-08-14",
+      "media_id": "18103102115605653",
+      "cta": "oferta",
+      "pilar": "educativo"
     }
   ]
 }
