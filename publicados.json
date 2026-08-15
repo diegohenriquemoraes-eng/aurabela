@@ -76,6 +76,16 @@
       "pilar": "produto",
       "tom": "rose",
       "produto": "serum-facial-renovador-c-e-timewise.png"
+    },
+    {
+      "tipo": "estatico",
+      "id": 11,
+      "data": "2026-08-15",
+      "media_id": "18049095305588254",
+      "cta": "pele",
+      "pilar": "autocuidado",
+      "formato": "frase",
+      "tom": "creme"
     }
   ]
 }
