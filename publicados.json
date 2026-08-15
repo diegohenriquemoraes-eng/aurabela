@@ -66,6 +66,16 @@
       "pilar": "prova",
       "formato": "carrossel",
       "tom": "areia"
+    },
+    {
+      "tipo": "reels",
+      "id": 2,
+      "data": "2026-08-15",
+      "media_id": "18402509386082331",
+      "cta": "seguir",
+      "pilar": "produto",
+      "tom": "rose",
+      "produto": "serum-facial-renovador-c-e-timewise.png"
     }
   ]
 }
