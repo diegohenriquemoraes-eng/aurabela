@@ -86,6 +86,16 @@
       "pilar": "autocuidado",
       "formato": "frase",
       "tom": "creme"
+    },
+    {
+      "tipo": "reels",
+      "id": 4,
+      "data": "2026-08-16",
+      "media_id": "18091498640551221",
+      "cta": "vitrine",
+      "pilar": "educativo",
+      "tom": "cafe",
+      "produto": "hidratante-facial-matificante-mista-oleosa.png"
     }
   ]
 }
