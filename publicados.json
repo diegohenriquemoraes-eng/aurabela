@@ -96,6 +96,16 @@
       "pilar": "educativo",
       "tom": "cafe",
       "produto": "hidratante-facial-matificante-mista-oleosa.png"
+    },
+    {
+      "tipo": "estatico",
+      "id": 12,
+      "data": "2026-08-16",
+      "media_id": "18110100275044357",
+      "cta": "pele",
+      "pilar": "educativo",
+      "formato": "carrossel",
+      "tom": "areia"
     }
   ]
 }
