@@ -106,6 +106,15 @@
       "pilar": "educativo",
       "formato": "carrossel",
       "tom": "areia"
+    },
+    {
+      "tipo": "reels",
+      "id": 17,
+      "data": "2026-08-17",
+      "media_id": "18095801939069563",
+      "cta": "oferta",
+      "pilar": "prova",
+      "tom": "rose"
     }
   ]
 }
