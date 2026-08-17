@@ -115,6 +115,17 @@
       "cta": "oferta",
       "pilar": "prova",
       "tom": "rose"
+    },
+    {
+      "tipo": "estatico",
+      "id": 4,
+      "data": "2026-08-17",
+      "media_id": "17900058729352080",
+      "cta": "pele",
+      "pilar": "produto",
+      "formato": "produto",
+      "tom": "creme",
+      "produto": "kit-basico-timewise.png"
     }
   ]
 }
