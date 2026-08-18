@@ -126,6 +126,17 @@
       "formato": "produto",
       "tom": "creme",
       "produto": "kit-basico-timewise.png"
+    },
+    {
+      "tipo": "reels",
+      "id": 7,
+      "data": "2026-08-18",
+      "media_id": "18350521381219860",
+      "cta": "vitrine",
+      "pilar": "autocuidado",
+      "foto": "ref-04-sorrindo-oculos-restaurante.jpg",
+      "rosto": true,
+      "tom": "cafe"
     }
   ]
 }
