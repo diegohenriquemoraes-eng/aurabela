@@ -137,6 +137,16 @@
       "foto": "ref-04-sorrindo-oculos-restaurante.jpg",
       "rosto": true,
       "tom": "cafe"
+    },
+    {
+      "tipo": "estatico",
+      "id": 16,
+      "data": "2026-08-18",
+      "media_id": "18058783208786844",
+      "cta": "seguir",
+      "pilar": "educativo",
+      "formato": "carrossel",
+      "tom": "areia"
     }
   ]
 }
