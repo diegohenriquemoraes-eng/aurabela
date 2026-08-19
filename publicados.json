@@ -147,6 +147,16 @@
       "pilar": "educativo",
       "formato": "carrossel",
       "tom": "areia"
+    },
+    {
+      "tipo": "reels",
+      "id": 6,
+      "data": "2026-08-19",
+      "media_id": "18112648615789061",
+      "cta": "pele",
+      "pilar": "educativo",
+      "tom": "rose",
+      "produto": "protetor-solar-fps-50.png"
     }
   ]
 }
