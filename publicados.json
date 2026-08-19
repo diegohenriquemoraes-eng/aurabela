@@ -157,6 +157,16 @@
       "pilar": "educativo",
       "tom": "rose",
       "produto": "protetor-solar-fps-50.png"
+    },
+    {
+      "tipo": "estatico",
+      "id": 13,
+      "data": "2026-08-19",
+      "media_id": "17877528273623337",
+      "cta": "vitrine",
+      "pilar": "prova",
+      "formato": "frase",
+      "tom": "creme"
     }
   ]
 }
