@@ -177,6 +177,16 @@
       "pilar": "produto",
       "tom": "cafe",
       "produto": "protetor-solar-fps-50.png"
+    },
+    {
+      "tipo": "estatico",
+      "id": 10,
+      "data": "2026-08-20",
+      "media_id": "17920303044202310",
+      "cta": "oferta",
+      "pilar": "autocuidado",
+      "formato": "carrossel",
+      "tom": "areia"
     }
   ]
 }
