@@ -167,6 +167,16 @@
       "pilar": "prova",
       "formato": "frase",
       "tom": "creme"
+    },
+    {
+      "tipo": "reels",
+      "id": 8,
+      "data": "2026-08-20",
+      "media_id": "18553044781078608",
+      "cta": "pele",
+      "pilar": "produto",
+      "tom": "cafe",
+      "produto": "protetor-solar-fps-50.png"
     }
   ]
 }
