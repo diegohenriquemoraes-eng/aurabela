@@ -197,6 +197,16 @@
       "pilar": "educativo",
       "tom": "rose",
       "produto": "gel-de-limpeza-4-em-1-timewise.png"
+    },
+    {
+      "tipo": "estatico",
+      "id": 8,
+      "data": "2026-08-21",
+      "media_id": "18054459587630623",
+      "cta": "vitrine",
+      "pilar": "educativo",
+      "formato": "dado",
+      "tom": "creme"
     }
   ]
 }
