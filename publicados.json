@@ -218,6 +218,16 @@
       "foto": "ref-05-sorrindo-oculos-sol.jpg",
       "rosto": true,
       "tom": "cafe"
+    },
+    {
+      "tipo": "estatico",
+      "id": 29,
+      "data": "2026-08-22",
+      "media_id": "18131854519638534",
+      "cta": "pele",
+      "pilar": "produto",
+      "formato": "carrossel",
+      "tom": "areia"
     }
   ]
 }
