@@ -238,6 +238,16 @@
       "pilar": "autocuidado",
       "tom": "rose",
       "produto": "agua-micelar.png"
+    },
+    {
+      "tipo": "estatico",
+      "id": 15,
+      "data": "2026-08-23",
+      "media_id": "18131715742652619",
+      "cta": "pele",
+      "pilar": "educativo",
+      "formato": "dado",
+      "tom": "creme"
     }
   ]
 }
