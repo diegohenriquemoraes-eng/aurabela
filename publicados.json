@@ -228,6 +228,16 @@
       "pilar": "produto",
       "formato": "carrossel",
       "tom": "areia"
+    },
+    {
+      "tipo": "reels",
+      "id": 12,
+      "data": "2026-08-23",
+      "media_id": "17939270331348306",
+      "cta": "vitrine",
+      "pilar": "autocuidado",
+      "tom": "rose",
+      "produto": "agua-micelar.png"
     }
   ]
 }
