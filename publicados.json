@@ -258,6 +258,16 @@
       "pilar": "educativo",
       "tom": "cafe",
       "produto": "protetor-solar-fps-50.png"
+    },
+    {
+      "tipo": "estatico",
+      "id": 18,
+      "data": "2026-08-24",
+      "media_id": "18122369657306488",
+      "cta": "pele",
+      "pilar": "prova",
+      "formato": "carrossel",
+      "tom": "areia"
     }
   ]
 }
