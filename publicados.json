@@ -248,6 +248,16 @@
       "pilar": "educativo",
       "formato": "dado",
       "tom": "creme"
+    },
+    {
+      "tipo": "reels",
+      "id": 16,
+      "data": "2026-08-24",
+      "media_id": "18092568152413483",
+      "cta": "oferta",
+      "pilar": "educativo",
+      "tom": "cafe",
+      "produto": "protetor-solar-fps-50.png"
     }
   ]
 }
