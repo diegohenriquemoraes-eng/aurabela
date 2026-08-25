@@ -268,6 +268,16 @@
       "pilar": "prova",
       "formato": "carrossel",
       "tom": "areia"
+    },
+    {
+      "tipo": "reels",
+      "id": 10,
+      "data": "2026-08-25",
+      "media_id": "18306491845303260",
+      "cta": "vitrine",
+      "pilar": "produto",
+      "tom": "rose",
+      "produto": "oleo-nutritivo.png"
     }
   ]
 }
