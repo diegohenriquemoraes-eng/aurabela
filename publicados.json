@@ -278,6 +278,16 @@
       "pilar": "produto",
       "tom": "rose",
       "produto": "oleo-nutritivo.png"
+    },
+    {
+      "tipo": "estatico",
+      "id": 17,
+      "data": "2026-08-25",
+      "media_id": "17938686957354285",
+      "cta": "seguir",
+      "pilar": "autocuidado",
+      "formato": "frase",
+      "tom": "creme"
     }
   ]
 }
