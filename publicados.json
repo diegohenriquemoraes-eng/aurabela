@@ -298,6 +298,15 @@
       "pilar": "educativo",
       "formato": "carrossel",
       "tom": "cafe"
+    },
+    {
+      "tipo": "reels",
+      "id": 19,
+      "data": "2026-08-26",
+      "media_id": "18096745952571821",
+      "cta": "vitrine",
+      "pilar": "educativo",
+      "tom": "areia"
     }
   ]
 }
