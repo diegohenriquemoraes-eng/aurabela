@@ -288,6 +288,16 @@
       "pilar": "autocuidado",
       "formato": "frase",
       "tom": "creme"
+    },
+    {
+      "tipo": "estatico",
+      "id": 22,
+      "data": "2026-08-26",
+      "media_id": "18124026272497527",
+      "cta": "pele",
+      "pilar": "educativo",
+      "formato": "carrossel",
+      "tom": "cafe"
     }
   ]
 }
