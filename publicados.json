@@ -338,6 +338,16 @@
       "cta": "pele",
       "pilar": "autocuidado",
       "tom": "cafe"
+    },
+    {
+      "tipo": "estatico",
+      "id": 26,
+      "data": "2026-08-28",
+      "media_id": "17925687633408289",
+      "cta": "vitrine",
+      "pilar": "educativo",
+      "formato": "carrossel",
+      "tom": "areia"
     }
   ]
 }
