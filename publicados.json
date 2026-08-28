@@ -348,6 +348,16 @@
       "pilar": "educativo",
       "formato": "carrossel",
       "tom": "areia"
+    },
+    {
+      "tipo": "reels",
+      "id": 21,
+      "data": "2026-08-28",
+      "media_id": "18104554342919639",
+      "cta": "seguir",
+      "pilar": "educativo",
+      "tom": "rose",
+      "produto": "hidratante-antioxidante-timewise.png"
     }
   ]
 }
