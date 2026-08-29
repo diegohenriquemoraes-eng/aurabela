@@ -388,6 +388,16 @@
       "cta": "pele",
       "pilar": "autocuidado",
       "tom": "areia"
+    },
+    {
+      "tipo": "estatico",
+      "id": 31,
+      "data": "2026-08-29",
+      "media_id": "18483282832109305",
+      "cta": "oferta",
+      "pilar": "educativo",
+      "formato": "carrossel",
+      "tom": "rose"
     }
   ]
 }
