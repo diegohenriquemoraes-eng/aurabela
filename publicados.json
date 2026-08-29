@@ -368,6 +368,17 @@
       "pilar": "prova",
       "tom": "creme",
       "produto": "esfoliante-facial.png"
+    },
+    {
+      "tipo": "estatico",
+      "id": 7,
+      "data": "2026-08-29",
+      "media_id": "17979552918065956",
+      "cta": "vitrine",
+      "pilar": "produto",
+      "formato": "produto",
+      "tom": "cafe",
+      "produto": "oleo-nutritivo.png"
     }
   ]
 }
