@@ -398,6 +398,18 @@
       "pilar": "educativo",
       "formato": "carrossel",
       "tom": "rose"
+    },
+    {
+      "tipo": "estatico",
+      "id": 9,
+      "data": "2026-08-30",
+      "media_id": "18029290781675039",
+      "cta": "pele",
+      "pilar": "educativo",
+      "formato": "retrato",
+      "tom": "creme",
+      "foto": "ref-02-closeup-frontal-oculos-grau.webp",
+      "rosto": true
     }
   ]
 }
