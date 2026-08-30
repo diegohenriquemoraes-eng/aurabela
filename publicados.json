@@ -410,6 +410,16 @@
       "tom": "creme",
       "foto": "ref-02-closeup-frontal-oculos-grau.webp",
       "rosto": true
+    },
+    {
+      "tipo": "reels",
+      "id": 22,
+      "data": "2026-08-30",
+      "media_id": "18175807597432484",
+      "cta": "vitrine",
+      "pilar": "prova",
+      "tom": "areia",
+      "produto": "creme-para-area-dos-olhos-timewise.png"
     }
   ]
 }
