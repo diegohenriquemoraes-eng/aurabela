@@ -420,6 +420,16 @@
       "pilar": "prova",
       "tom": "areia",
       "produto": "creme-para-area-dos-olhos-timewise.png"
+    },
+    {
+      "tipo": "estatico",
+      "id": 14,
+      "data": "2026-08-30",
+      "media_id": "18029118968676161",
+      "cta": "seguir",
+      "pilar": "produto",
+      "formato": "frase",
+      "tom": "cafe"
     }
   ]
 }
