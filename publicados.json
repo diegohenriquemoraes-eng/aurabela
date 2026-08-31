@@ -441,6 +441,15 @@
       "formato": "produto",
       "tom": "rose",
       "produto": "serum-facial-renovador-c-e-timewise.png"
+    },
+    {
+      "tipo": "reels",
+      "id": 24,
+      "data": "2026-08-31",
+      "media_id": "18115082489068851",
+      "cta": "vitrine",
+      "pilar": "educativo",
+      "tom": "creme"
     }
   ]
 }
