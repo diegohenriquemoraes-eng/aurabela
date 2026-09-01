@@ -450,6 +450,16 @@
       "cta": "vitrine",
       "pilar": "educativo",
       "tom": "creme"
+    },
+    {
+      "tipo": "estatico",
+      "id": 28,
+      "data": "2026-09-01",
+      "media_id": "18120901267904543",
+      "cta": "pele",
+      "pilar": "educativo",
+      "formato": "dado",
+      "tom": "areia"
     }
   ]
 }
