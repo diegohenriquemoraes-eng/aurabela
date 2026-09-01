@@ -469,6 +469,17 @@
       "cta": "oferta",
       "pilar": "prova",
       "tom": "cafe"
+    },
+    {
+      "tipo": "estatico",
+      "id": 25,
+      "data": "2026-09-01",
+      "media_id": "18035392373830476",
+      "cta": "pele",
+      "pilar": "produto",
+      "formato": "produto",
+      "tom": "rose",
+      "produto": "kit-labios-de-seda-karite-aroma-de-cha-branco-citrus.png"
     }
   ]
 }
