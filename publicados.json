@@ -480,6 +480,16 @@
       "formato": "produto",
       "tom": "rose",
       "produto": "kit-labios-de-seda-karite-aroma-de-cha-branco-citrus.png"
+    },
+    {
+      "tipo": "estatico",
+      "id": 21,
+      "data": "2026-09-02",
+      "media_id": "18109073026871764",
+      "cta": "vitrine",
+      "pilar": "autocuidado",
+      "formato": "frase",
+      "tom": "creme"
     }
   ]
 }
