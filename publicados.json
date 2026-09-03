@@ -502,6 +502,16 @@
       "tom": "areia",
       "foto": "ref-03-closeup-oculos-boina.jpg",
       "rosto": true
+    },
+    {
+      "tipo": "estatico",
+      "id": 19,
+      "data": "2026-09-03",
+      "media_id": "17998003253800504",
+      "cta": "pele",
+      "pilar": "educativo",
+      "formato": "frase",
+      "tom": "rose"
     }
   ]
 }
