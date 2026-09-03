@@ -490,6 +490,18 @@
       "pilar": "autocuidado",
       "formato": "frase",
       "tom": "creme"
+    },
+    {
+      "tipo": "estatico",
+      "id": 24,
+      "data": "2026-09-03",
+      "media_id": "18012006977750666",
+      "cta": "seguir",
+      "pilar": "educativo",
+      "formato": "retrato",
+      "tom": "areia",
+      "foto": "ref-03-closeup-oculos-boina.jpg",
+      "rosto": true
     }
   ]
 }
