@@ -532,6 +532,16 @@
       "cta": "pele",
       "pilar": "produto",
       "tom": "creme"
+    },
+    {
+      "tipo": "estatico",
+      "id": 23,
+      "data": "2026-09-04",
+      "media_id": "17996007908817805",
+      "cta": "oferta",
+      "pilar": "autocuidado",
+      "formato": "frase",
+      "tom": "areia"
     }
   ]
 }
