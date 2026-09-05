@@ -542,6 +542,16 @@
       "pilar": "autocuidado",
       "formato": "frase",
       "tom": "areia"
+    },
+    {
+      "tipo": "estatico",
+      "id": 27,
+      "data": "2026-09-05",
+      "media_id": "18022658558914180",
+      "cta": "pele",
+      "pilar": "educativo",
+      "formato": "frase",
+      "tom": "rose"
     }
   ]
 }
