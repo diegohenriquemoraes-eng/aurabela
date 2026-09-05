@@ -552,6 +552,16 @@
       "pilar": "educativo",
       "formato": "frase",
       "tom": "rose"
+    },
+    {
+      "tipo": "estatico",
+      "id": 32,
+      "data": "2026-09-05",
+      "media_id": "18115180963964809",
+      "cta": "vitrine",
+      "pilar": "educativo",
+      "formato": "frase",
+      "tom": "cafe"
     }
   ]
 }
